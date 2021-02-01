@@ -1,0 +1,19 @@
+10 REMark Boot file
+100 OPEN#4,con_512x256a0x0
+110 PAPER#4,0:INK#4,7
+120 CLS#4
+130 PRINT#4
+140 CSIZE#4, 3,1
+150 PRINT#4, "   Welcome to iQL"
+160 CSIZE#4,0,0
+170 PRINT#4
+180 PRINT#4, "       Release:       ", IQL_RELEASE$
+190 PRINT#4, "       QDOS version: ", VER$
+200 PRINT#4
+210 CSIZE#4,0,0
+220 PRINT#4:PRINT#4, "       <press any key>"
+230 PAUSE
+240 CLS#0:CLS#1:CLS#2
+250 CLOSE#4
+998 :
+999 REMark end

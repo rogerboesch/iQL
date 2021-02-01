@@ -1,0 +1,157 @@
+100 ::
+110 REMark Space Invaders3_bas, by S.Poole. v14dec2020
+120 if_$=' '
+130 im$=' '
+140 y2=0
+150 is=0: left=0: right=0: m=0
+160 down=0: x=0: y=0: mm=0: mx1=0: easy=0: m$=' '
+170 ps=0: new_ships=0: f=0: j=0: sx=0: sy=0: s$='   '
+180 Main: STOP
+190 :
+200 DEFine PROCedure Main
+210 LOCal ct,mx,my,D1,s,play,amo,try2
+220  REMark OPEN#1,con_16: WINDOW 512,256,0,0: CLS
+230  WINDOW 256,206,128,32: PAPER 2: INK 7: CLS: CSIZE 3,0
+240  REPeat try2
+250  AT 0,0: PRINT' CSIZE 3 or 0?'
+260  im$=INKEY$(-1): IF im$='': NEXT try2
+270  IF im$ INSTR '03': is=im$: ELSE NEXT try2
+280 EXIT try2
+290 END REPeat try2
+300  SELect is
+310     =0: n=20: x2=40: y2=19: amo=n  : CSIZE 0,0
+320     =3: n=6 : x2=14: y2=9 : amo=n*3: CSIZE 3,1
+330  END SELect : CLS: im$=INKEY$(100): if_$=''
+340 :
+350 REMark Grid, Key$, Ship$, Man$, PauSe
+355  REMark dim k$(n)
+360  DIM g(n,2): s$='-O-': m$='^'
+370  left=192: right=200: down=216: x=1: y=2: mm=0
+380  REMark Modify these variables for playability:
+390  easy=0: ps=1: new_ships=5
+400 :
+410 REMark Draw Grid:
+420  IF easy THEN
+430     FOR f=1 TO x2
+440         FOR j=1 TO y2
+450             AT j,f: PRINT '.'
+460         END FOR j
+470     END FOR f
+480  END IF
+490 :
+500 REMark get ships:
+510  FOR f=1 TO n
+520      sx=RND(2 TO x2): sy=1: pr sx,sy,s$
+530      g(f,x)=sx: g(f,y)=sy
+540  END FOR f: ct=n
+550 :
+560 REMark get man:
+570  mx=INT(x2/2): my=y2: pr mx,my,m$: D1=DATE
+580 :
+590 REPeat play
+600 s=RND(1 TO n): move_ship s: move_man
+610 AT 0,1: PRINT amo!!: IF amo<1: you_lost
+620 END REPeat play
+630 END DEFine Main
+640 ::
+650 ::
+660 DEFine PROCedure move_man
+670 LOCal i$,j,cd
+680  i$='': REMark get all pauses for ship movements:
+690  :
+700  FOR j=1 TO n
+705      pr mx,my,' '
+710      pr mx,my,m$: REMark i$=if_$&i$
+712      IF if_$<>'': i$=if_$
+715      cd=CODE(i$): if_$=''
+720      SELect cd
+730         =down : mx1=mx-1: IF amo>0: fire: any_hit: amo=amo-1
+740         =left : mx=mx-1 : IF mx<2: mx=2
+750         =right: mx=mx+1 : IF mx>x2+1: mx=x2+1
+760      END SELect
+770      pr mx,my,m$: REMark i$=INKEY$(ps)&if_$
+772      i$=INKEY$(ps): IF i$='': i$=if_$
+775 :
+780  END FOR j
+790 END DEFine
+800 :
+810 DEFine PROCedure fire
+820 LOCal yy
+830  FOR yy=y2-1 TO 1 STEP -1: pr mx,yy,'!'
+840  if_$=INKEY$(5)
+850  FOR yy=y2-1 TO 1 STEP -1: pr mx,yy,'!'
+860 END DEFine
+870 :
+880 DEFine PROCedure any_hit
+890 LOCal h
+900  FOR h=1 TO n
+910      :
+920      REMark got_yah:
+930      IF mx1=g(h,x) THEN
+940         BEEP 12345,67: pr g(h,x),g(h,y),s$: amo=amo+1
+950         :
+960         REMark remove the ship from the grid:
+970         g(h,x)=0: ct=ct-1: IF ct=0: you_won
+980         :
+990         REMark Create another ship:
+1000         IF RND(new_ships) THEN
+1010            g(h,x)=RND(2 TO x2): g(h,y)=1
+1020            pr g(h,x),g(h,y),s$: ct=ct+1
+1030         END IF
+1040      END IF
+1050  END FOR h
+1060 END DEFine
+1070 :
+1080 DEFine PROCedure move_ship(m)
+1090 LOCal try1
+1100  sx=g(m,x): sy=g(m,y)
+1110  :
+1120  REMark Dont move destroyed ships:
+1130  IF NOT sx: RETurn
+1140  pr sx,sy,' ': pr sx,sy,s$
+1150  :
+1160  REMark Move ship:
+1170 REPeat try1
+1180  sx=sx+RND(-1 TO 1)
+1190  IF sx<+1: NEXT try1
+1200  IF sx>x2: NEXT try1
+1210 EXIT try1
+1220 END REPeat try1
+1230  IF is=3: : IF RND(1)>0: IF RND(1)>0: sy=sy+1
+1240  IF is=0: : sy=sy+RND(4)
+1250  pr sx,sy,s$
+1260  :
+1270  REMark Store any key touched:
+1280  REMark k$(m)=INKEY$(ps)
+1290  :
+1300  REMark Did ship land?
+1310  IF sy>=y2: you_lost
+1320  g(m,x)=sx: g(m,y)=sy: mm=m
+1330 END DEFine move_ship
+1340 :
+1350 DEFine PROCedure you_lost
+1360 LOCal il$,try
+1370 IF amo>0: BEEP 12345,255: pr sx,sy,'***'
+1380 IF amo<1: AT 0,9: PRINT'no ammo'
+1390  AT 0,0: PRINT 'YOU LOST'
+1400  REPeat try
+1410  AT 1,0: PRINT' Another? (y/n)': il$=INKEY$(-1)
+1420  IF il$=='n': STOP: ELSE IF il$=='y': RUN
+1430  NEXT try
+1440 END REPeat try
+1450 END DEFine
+1460 :
+1470 DEFine PROCedure pr(px,py,p$)
+1480  OVER -1: AT py,px-1: PRINT p$: OVER 0
+1490 END DEFine
+1500 :
+1510 DEFine PROCedure you_won
+1520 LOCal D2,iw$,try
+1530  BEEP 12345,6: D2=DATE-D1
+1540  AT 1,1: PRINT'YOU WON in'!D2
+1550 REPeat try
+1560  AT 2,0: PRINT'Another? (y/n)': iw$=INKEY$(-1)
+1570  IF iw$=='n': STOP: ELSE IF iw$=='y': RUN
+1580 NEXT try
+1590 END REPeat try
+1600 END DEFine

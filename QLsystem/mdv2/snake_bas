@@ -1,0 +1,161 @@
+100 REMark Type 'start' to set up a 'low' winning score file
+110 ::
+120  : REMark Snake4_bas by S.Poole, v13nov2020
+130 w=30: REMark adapt this value +/- to suit your configuration speed !
+140 i$=' ': a$=' ': b$=' ': c$=' '
+150 n=0: n1=0: wt=0: z=0: o=0: s=0: x=0: ct=0: kt=0
+160 cnt=0: try=0: f=0: j=0: ac=0: dn=0: p=0: b2=0: b4=0: b6=0: b8=0: rd_n=0: ns=0
+170 left=0: right=0: up=0: down=0: rn=0: loop=0: cd=0: no_ky=0: di=0: oac=0: odn=0
+180 test=0: test1=0: test2=0: test3=0: test4=0
+190 DIM g(0,0),g(324,3),q(0,0),q(324,2), lowest(6): escape=27
+200 :
+210  OPEN#1,con_16: WINDOW#1,512,256,0,0
+220 REPeat test
+230  PAPER 0: INK 7: CSIZE 3,1: CLS: STRIP 0: OVER 0
+240  pr 1,2,'MAZE SNAKE...': pr 5,2,'Grid Size : (1 to 6) ?'
+250  pr 10,2,'( Hit ESCape to quit )'
+260  i$=INKEY$(#1,-1): IF i$='': NEXT test
+270  IF i$ INSTR '123456': n=i$+3: n1=n-1: i=i$: EXIT test
+280 END REPeat test
+290  OPEN#4,'win1_low_score': FOR j=1 TO 6: INPUT#4,lowest(j)
+300 CLOSE#4
+310  SELect n: =4 TO 6:wt=w*1.25*n: =7:wt=w*1*n: =8:wt=w*.75*n: =9:wt=w*.5*n
+320  CLS: PAPER 2: n=n*2: n1=n-1 : CSIZE 2,0
+330  z=0: o=1: s=2: x=3: ct=1: kt=1: cnt=0: try=-1
+340 :
+350 REMark Draw the grid:
+360 PAPER 7: FOR f=0 TO n+1
+370     FOR j=0 TO n+1: pr j,f,' '
+380 END FOR f
+390 PAPER 0: FOR f=1 TO n
+400     FOR j=1 TO n: pr j,f,' '
+410 END FOR f
+420 :
+430  REMark Get random obstacle postions:
+440 SELect n: =8:ns=16: =10:ns=22: =12:ns=32: =14:ns=50: =16:ns=72: =18:ns=76
+450 PAPER 1: INK 6: FOR f=1 TO ns
+460   REMark AT 1,12: PRINT f!: PAUSE 9
+470 REPeat test2
+480     ac=RND(2 TO n1): dn=RND(2 TO n1): p=(dn-1)*n+ac
+490  j$=INKEY$: IF CODE(j$)=escape: epilogue
+500     IF g(p,3)=x: NEXT test2
+510     REMark Eliminate obstacles on a diagonal:
+520     b2=(dn-1+1)*n+ac+1: IF g(b2,3)=x: NEXT test2
+530     b4=(dn-1-1)*n+ac+1: IF g(b4,3)=x: NEXT test2
+540     b6=(dn-1-1)*n+ac-1: IF g(b6,3)=x: NEXT test2
+550     b8=(dn-1+1)*n+ac-1: IF g(b8,3)=x: NEXT test2
+560     EXIT test2
+570 END REPeat test2
+580     BEEP 12345,(f*20)*2: PAUSE 5
+590     :
+600     g(p,1)=ac: g(p,2)=dn: g(p,3)=x: pr dn,ac,'X'
+610 END FOR f
+620 :
+630 REMark Get random snake food:
+640 INK 4: PAPER 0: rd_n=n*n-ns-n*4: FOR f=1 TO rd_n
+650      REPeat test3
+660     ac=RND(1 TO n): dn=RND(1 TO n): p=(dn-1)*n+ac
+670  j$=INKEY$: IF CODE(j$)=escape: epilogue
+680     IF g(p,1)=ac AND g(p,2)=dn: NEXT test3
+690     EXIT test3
+700      END REPeat test3
+710     g(p,1)=ac: g(p,2)=dn: g(p,3)=o: pr dn,ac,'.': BEEP 1234,f: PAUSE 5
+720 END FOR f
+730 :
+740 REMark Draw snake head:
+750 REPeat test4
+760  INK 2: ac=RND(1 TO n): dn=RND(1 TO n): p=(dn-1)*n+ac
+770  IF g(p,1)=ac AND g(p,2)=dn: NEXT test4
+780  EXIT test4
+790 END REPeat test4
+800  pr dn,ac,'S': q(1,1)=ac: q(1,2)=dn: BEEP 0,255: PAUSE 999: BEEP
+810 :
+820 REMark Main game:
+830  left=192: right=200: up=208: down=216: rn=RND(1 TO 4)
+840  SELect rn
+850     =1:di=left: =2:di=right: =3:di=up: =4:di=down
+860  END SELect : i$=INKEY$(#1,wt)
+870  :
+880 REPeat loop
+890  REMark flash_cursor
+900  OVER 0: cd=0: a$='': b$='': try=try+1
+910  pr dn,ac,'S': b$=INKEY$(#1,wt)
+920  c$=a$&b$: cd=CODE(b$): no_ky=0
+930  :
+940 REMark Key determines snake direction:
+950  SELect cd
+960     =left : ac=ac-1: di=left : IF ac<1: lost
+970     =right: ac=ac+1: di=right: IF ac>n: lost
+980     =up   : dn=dn-1: di=up   : IF dn<1: lost
+990     =down : dn=dn+1: di=down : IF dn>n: lost
+1000     =escape: epilogue
+1010     =REMAINDER : no_ky=1
+1020  END SELect
+1030 :
+1040 REMark Direction when no key pressed:
+1050 IF no_ky THEN
+1060    SELect di
+1070       =left : ac=ac-1: IF ac<1: lost
+1080       =right: ac=ac+1: IF ac>n: lost
+1090       =up   : dn=dn-1: IF dn<1: lost
+1100       =down : dn=dn+1: IF dn>n: lost
+1110     END SELect : BEEP 1234,30
+1120 END IF
+1130  :
+1140  REMark New head position:
+1150  p=(dn-1)*n+ac
+1160  :
+1170  REMark you hit yourself:
+1180  IF g(p,3)=s OR g(p,3)=x: lost
+1190  :
+1200  REMark The cell is empty:
+1210  IF g(p,3)=0 THEN
+1220     g(p,1)=ac: g(p,2)=dn: g(p,3)=s: pr dn,ac,'S'
+1230     oac=q(kt,1): odn=q(kt,2): kt=kt+1
+1240     p2=(odn-1)*n+oac: g(p2,3)=z: pr odn,oac,' '
+1250     ct=ct+1: q(ct,1)=ac: q(ct,2)=dn
+1260  END IF
+1270  :
+1280  REMark Draw lengthened snake:
+1290  IF g(p,3)=o THEN
+1300     g(p,1)=ac: g(p,2)=dn: g(p,3)=s: INK 3: pr dn,ac,'S'
+1310     ct=ct+1: q(ct,1)=ac: q(ct,2)=dn: BEEP 12345,6: PAUSE 10
+1320     cnt=cnt+1: IF cnt=rd_n: won
+1330  END IF : BEEP 1234,99
+1340  :
+1350 END REPeat loop
+1360 ::
+1370 :
+1380 ::
+1390 DEFine PROCedure pr(dwn,acr,m$)
+1400   AT dwn,acr: PRINT m$
+1410 END DEFine
+1420 :
+1430 DEFine PROCedure lost
+1440  INK 2: PAPER 6: pr dn,ac,'*': INK 7: PAPER 2
+1450  AT 9,12: PRINT 'Game Over!'!try!'moves'
+1460  BEEP 12345,67: epilogue
+1470 END DEFine
+1480 :
+1490 DEFine PROCedure won
+1500 score=INT((ct/cnt)*1000)
+1510  INK 7: PAPER 2: AT 9,12: PRINT 'Bravo!'!try!'moves :'!score: low=lowest(i)
+1520  IF score<lowest(i)
+1530   BEEP 0,64,16,1024,8,4,4
+1540   lowest(i)=score: OPEN_OVER#4,win1_low_score: FOR j=1 TO 6: PRINT#4,lowest(j)
+1550   CLOSE#4: AT 7,12: PRINT low!'was BEST SCORE to DATE !': PAUSE 100
+1560  END IF
+1570  pr dn,ac,'¶': BEEP 12345,6:  epilogue
+1580 END DEFine
+1590 :
+1600 DEFine PROCedure epilogue
+1610  PAPER 2: INK 4: i$=INKEY$(#1,300)
+1620  pr 10,12,'Another Game? (y/n)'
+1630  i$=INKEY$(#1,-1)
+1640  IF i$=='n': ELSE : RUN
+1650  WINDOW 256,206,256,0: CSIZE 0,0: STOP
+1660 END DEFine
+1670 ::
+1680 DEFine PROCedure start
+1690  OPEN_NEW#4,'win1_low_score': FOR j=1 TO 6: PRINT#4,9999
+1700 CLOSE#4: STOP: END DEFine

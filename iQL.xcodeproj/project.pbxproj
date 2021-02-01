@@ -1,0 +1,990 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB8BCF6725C3D2A800406ACD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8BCF6625C3D2A800406ACD /* AppDelegate.m */; };
+		DB8BCF6925C3D2A900406ACD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB8BCF6825C3D2A900406ACD /* Assets.xcassets */; };
+		DB8BCF6F25C3D2A900406ACD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8BCF6E25C3D2A900406ACD /* main.m */; };
+		DB8BD28325C402A400406ACD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD28225C402A400406ACD /* AppDelegate.m */; };
+		DB8BD28625C402A400406ACD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD28525C402A400406ACD /* SceneDelegate.m */; };
+		DB8BD28925C402A400406ACD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD28825C402A400406ACD /* ViewController.m */; };
+		DB8BD28C25C402A400406ACD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD28A25C402A400406ACD /* Main.storyboard */; };
+		DB8BD28E25C402A500406ACD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD28D25C402A500406ACD /* Assets.xcassets */; };
+		DB8BD29125C402A500406ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD28F25C402A500406ACD /* LaunchScreen.storyboard */; };
+		DB8BD29425C402A500406ACD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD29325C402A500406ACD /* main.m */; };
+		DB8BD2CA25C41BF300406ACD /* RBKeyboardSupportField.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD2C825C41BF300406ACD /* RBKeyboardSupportField.m */; };
+		DB8BD2F125C55F7600406ACD /* BOOT in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD2E825C55F7600406ACD /* BOOT */; };
+		DB8BD2F225C55F7600406ACD /* ql_js.rom in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD2EA25C55F7600406ACD /* ql_js.rom */; };
+		DB8BD2F325C55F7600406ACD /* tk232.rom in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD2EB25C55F7600406ACD /* tk232.rom */; };
+		DB8BD2F425C55F7600406ACD /* min198.rom in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD2EC25C55F7600406ACD /* min198.rom */; };
+		DB8BD2F525C55F7600406ACD /* ql_jm.rom in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD2ED25C55F7600406ACD /* ql_jm.rom */; };
+		DB8BD2F625C55F7600406ACD /* snake_bas in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD2EF25C55F7600406ACD /* snake_bas */; };
+		DB8BD2F725C55F7600406ACD /* invaders_bas in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD2F025C55F7600406ACD /* invaders_bas */; };
+		DB8BD2FA25C55F8200406ACD /* BOOT in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD2E825C55F7600406ACD /* BOOT */; };
+		DB8BD2FD25C55F8800406ACD /* min198.rom in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD2EC25C55F7600406ACD /* min198.rom */; };
+		DB8BD2FE25C55F8800406ACD /* ql_js.rom in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD2EA25C55F7600406ACD /* ql_js.rom */; };
+		DB8BD2FF25C55F8800406ACD /* ql_jm.rom in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD2ED25C55F7600406ACD /* ql_jm.rom */; };
+		DB8BD30025C55F8800406ACD /* tk232.rom in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD2EB25C55F7600406ACD /* tk232.rom */; };
+		DB8BD30325C55F9000406ACD /* invaders_bas in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD2F025C55F7600406ACD /* invaders_bas */; };
+		DB8BD30425C55F9000406ACD /* snake_bas in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD2EF25C55F7600406ACD /* snake_bas */; };
+		DB8BD49125C5618C00406ACD /* rb_mactoolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD43825C5618C00406ACD /* rb_mactoolbar.m */; };
+		DB8BD49325C5618C00406ACD /* rb_screen.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD43F25C5618C00406ACD /* rb_screen.c */; };
+		DB8BD49425C5618C00406ACD /* rb_screen.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD43F25C5618C00406ACD /* rb_screen.c */; };
+		DB8BD49525C5618C00406ACD /* QL_config.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD44525C5618C00406ACD /* QL_config.c */; };
+		DB8BD49625C5618C00406ACD /* QL_config.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD44525C5618C00406ACD /* QL_config.c */; };
+		DB8BD49725C5618C00406ACD /* QL_sound.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD44625C5618C00406ACD /* QL_sound.c */; };
+		DB8BD49825C5618C00406ACD /* QL_sound.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD44625C5618C00406ACD /* QL_sound.c */; };
+		DB8BD49925C5618C00406ACD /* QL_hardware.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD44725C5618C00406ACD /* QL_hardware.c */; };
+		DB8BD49A25C5618C00406ACD /* QL_hardware.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD44725C5618C00406ACD /* QL_hardware.c */; };
+		DB8BD49B25C5618C00406ACD /* QL_vfs.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD44825C5618C00406ACD /* QL_vfs.c */; };
+		DB8BD49C25C5618C00406ACD /* QL_vfs.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD44825C5618C00406ACD /* QL_vfs.c */; };
+		DB8BD49D25C5618C00406ACD /* QL_disk.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD44B25C5618C00406ACD /* QL_disk.c */; };
+		DB8BD49E25C5618C00406ACD /* QL_disk.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD44B25C5618C00406ACD /* QL_disk.c */; };
+		DB8BD49F25C5618C00406ACD /* QL_serio.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD44C25C5618C00406ACD /* QL_serio.c */; };
+		DB8BD4A025C5618C00406ACD /* QL_serio.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD44C25C5618C00406ACD /* QL_serio.c */; };
+		DB8BD4A125C5618C00406ACD /* QL_driver.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD44E25C5618C00406ACD /* QL_driver.c */; };
+		DB8BD4A225C5618C00406ACD /* QL_driver.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD44E25C5618C00406ACD /* QL_driver.c */; };
+		DB8BD4A325C5618C00406ACD /* QL_boot.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD44F25C5618C00406ACD /* QL_boot.c */; };
+		DB8BD4A425C5618C00406ACD /* QL_boot.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD44F25C5618C00406ACD /* QL_boot.c */; };
+		DB8BD4A525C5618C00406ACD /* QL_cconv.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD45125C5618C00406ACD /* QL_cconv.c */; };
+		DB8BD4A625C5618C00406ACD /* QL_cconv.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD45125C5618C00406ACD /* QL_cconv.c */; };
+		DB8BD4A725C5618C00406ACD /* QL_basext.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD45225C5618C00406ACD /* QL_basext.c */; };
+		DB8BD4A825C5618C00406ACD /* QL_basext.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD45225C5618C00406ACD /* QL_basext.c */; };
+		DB8BD4A925C5618C00406ACD /* QL_serial.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD45325C5618C00406ACD /* QL_serial.c */; };
+		DB8BD4AA25C5618C00406ACD /* QL_serial.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD45325C5618C00406ACD /* QL_serial.c */; };
+		DB8BD4AB25C5618C00406ACD /* QL_emulator.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD45425C5618C00406ACD /* QL_emulator.c */; };
+		DB8BD4AC25C5618C00406ACD /* QL_emulator.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD45425C5618C00406ACD /* QL_emulator.c */; };
+		DB8BD4AD25C5618C00406ACD /* QL_mouse.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD45825C5618C00406ACD /* QL_mouse.c */; };
+		DB8BD4AE25C5618C00406ACD /* QL_mouse.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD45825C5618C00406ACD /* QL_mouse.c */; };
+		DB8BD4AF25C5618C00406ACD /* QL_ip.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD45925C5618C00406ACD /* QL_ip.c */; };
+		DB8BD4B025C5618C00406ACD /* QL_ip.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD45925C5618C00406ACD /* QL_ip.c */; };
+		DB8BD4B125C5618C00406ACD /* QL_screen.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD45C25C5618C00406ACD /* QL_screen.c */; };
+		DB8BD4B225C5618C00406ACD /* QL_screen.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD45C25C5618C00406ACD /* QL_screen.c */; };
+		DB8BD4B325C5618C00406ACD /* QL_poll.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD45D25C5618C00406ACD /* QL_poll.c */; };
+		DB8BD4B425C5618C00406ACD /* QL_poll.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD45D25C5618C00406ACD /* QL_poll.c */; };
+		DB8BD4B525C5618C00406ACD /* QL_traps.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD45F25C5618C00406ACD /* QL_traps.c */; };
+		DB8BD4B625C5618C00406ACD /* QL_traps.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD45F25C5618C00406ACD /* QL_traps.c */; };
+		DB8BD4B725C5618C00406ACD /* QL_files.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD46025C5618C00406ACD /* QL_files.c */; };
+		DB8BD4B825C5618C00406ACD /* QL_files.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD46025C5618C00406ACD /* QL_files.c */; };
+		DB8BD4B925C5618C00406ACD /* base_instructions_pz.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD46325C5618C00406ACD /* base_instructions_pz.c */; };
+		DB8BD4BA25C5618C00406ACD /* base_instructions_pz.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD46325C5618C00406ACD /* base_instructions_pz.c */; };
+		DB8BD4BB25C5618C00406ACD /* base_xc68.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD46425C5618C00406ACD /* base_xc68.c */; };
+		DB8BD4BC25C5618C00406ACD /* base_xc68.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD46425C5618C00406ACD /* base_xc68.c */; };
+		DB8BD4BD25C5618C00406ACD /* base_xcodes.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD46525C5618C00406ACD /* base_xcodes.c */; };
+		DB8BD4BE25C5618C00406ACD /* base_xcodes.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD46525C5618C00406ACD /* base_xcodes.c */; };
+		DB8BD4BF25C5618C00406ACD /* base_bdi.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD46725C5618C00406ACD /* base_bdi.c */; };
+		DB8BD4C025C5618C00406ACD /* base_bdi.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD46725C5618C00406ACD /* base_bdi.c */; };
+		DB8BD4C125C5618C00406ACD /* base_pty.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD46925C5618C00406ACD /* base_pty.c */; };
+		DB8BD4C225C5618C00406ACD /* base_pty.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD46925C5618C00406ACD /* base_pty.c */; };
+		DB8BD4C325C5618C00406ACD /* base_iexl_general.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD46B25C5618C00406ACD /* base_iexl_general.c */; };
+		DB8BD4C425C5618C00406ACD /* base_iexl_general.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD46B25C5618C00406ACD /* base_iexl_general.c */; };
+		DB8BD4C525C5618C00406ACD /* base_script.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD46C25C5618C00406ACD /* base_script.c */; };
+		DB8BD4C625C5618C00406ACD /* base_script.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD46C25C5618C00406ACD /* base_script.c */; };
+		DB8BD4C725C5618C00406ACD /* base_uxfile.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD46E25C5618C00406ACD /* base_uxfile.c */; };
+		DB8BD4C825C5618C00406ACD /* base_uxfile.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD46E25C5618C00406ACD /* base_uxfile.c */; };
+		DB8BD4C925C5618C00406ACD /* base_vm.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD47225C5618C00406ACD /* base_vm.c */; };
+		DB8BD4CA25C5618C00406ACD /* base_vm.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD47225C5618C00406ACD /* base_vm.c */; };
+		DB8BD4CB25C5618C00406ACD /* base_trace.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD47525C5618C00406ACD /* base_trace.c */; };
+		DB8BD4CC25C5618C00406ACD /* base_trace.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD47525C5618C00406ACD /* base_trace.c */; };
+		DB8BD4CD25C5618C00406ACD /* base_qmtrap.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD47725C5618C00406ACD /* base_qmtrap.c */; };
+		DB8BD4CE25C5618C00406ACD /* base_qmtrap.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD47725C5618C00406ACD /* base_qmtrap.c */; };
+		DB8BD4CF25C5618C00406ACD /* base_util.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD47825C5618C00406ACD /* base_util.c */; };
+		DB8BD4D025C5618C00406ACD /* base_util.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD47825C5618C00406ACD /* base_util.c */; };
+		DB8BD4D125C5618C00406ACD /* base_dummies.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD47F25C5618C00406ACD /* base_dummies.c */; };
+		DB8BD4D225C5618C00406ACD /* base_dummies.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD47F25C5618C00406ACD /* base_dummies.c */; };
+		DB8BD4D525C5618C00406ACD /* base_general.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD48325C5618C00406ACD /* base_general.c */; };
+		DB8BD4D625C5618C00406ACD /* base_general.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD48325C5618C00406ACD /* base_general.c */; };
+		DB8BD4D725C5618C00406ACD /* base_instructions_ao.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD48525C5618C00406ACD /* base_instructions_ao.c */; };
+		DB8BD4D825C5618C00406ACD /* base_instructions_ao.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD48525C5618C00406ACD /* base_instructions_ao.c */; };
+		DB8BD4D925C5618C00406ACD /* base_cfg.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD48825C5618C00406ACD /* base_cfg.c */; };
+		DB8BD4DA25C5618C00406ACD /* base_cfg.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD48825C5618C00406ACD /* base_cfg.c */; };
+		DB8BD4DB25C5618C00406ACD /* base_version.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD48925C5618C00406ACD /* base_version.c */; };
+		DB8BD4DC25C5618D00406ACD /* base_version.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD48925C5618C00406ACD /* base_version.c */; };
+		DB8BD4DD25C5618D00406ACD /* base_memaccess.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD48A25C5618C00406ACD /* base_memaccess.c */; };
+		DB8BD4DE25C5618D00406ACD /* base_memaccess.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD48A25C5618C00406ACD /* base_memaccess.c */; };
+		DB8BD4DF25C5618D00406ACD /* base_init.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD48B25C5618C00406ACD /* base_init.c */; };
+		DB8BD4E025C5618D00406ACD /* base_init.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD48B25C5618C00406ACD /* base_init.c */; };
+		DB8BD4E925C561C600406ACD /* rb_renderview.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD43425C5618C00406ACD /* rb_renderview.m */; };
+		DB8BD4EC25C561C700406ACD /* rb_renderview.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD43425C5618C00406ACD /* rb_renderview.m */; };
+		DB8BD50525C565D100406ACD /* rb_settings.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD50425C565D100406ACD /* rb_settings.c */; };
+		DB8BD50625C565D100406ACD /* rb_settings.c in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD50425C565D100406ACD /* rb_settings.c */; };
+		DB8BD50D25C5689100406ACD /* rb_platform.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD50C25C5689100406ACD /* rb_platform.m */; };
+		DB8BD50E25C5689100406ACD /* rb_platform.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD50C25C5689100406ACD /* rb_platform.m */; };
+		DB8BD51425C6CAEF00406ACD /* ql.ini in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD51325C6CAEF00406ACD /* ql.ini */; };
+		DB8BD51525C6CAEF00406ACD /* ql.ini in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD51325C6CAEF00406ACD /* ql.ini */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DB8BCF6225C3D2A800406ACD /* iQLmac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQLmac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB8BCF6525C3D2A800406ACD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DB8BCF6625C3D2A800406ACD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DB8BCF6825C3D2A900406ACD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB8BCF6D25C3D2A900406ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB8BCF6E25C3D2A900406ACD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DB8BCF7025C3D2A900406ACD /* iQLmac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iQLmac.entitlements; sourceTree = "<group>"; };
+		DB8BD27F25C402A400406ACD /* iQLios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQLios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB8BD28125C402A400406ACD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DB8BD28225C402A400406ACD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DB8BD28425C402A400406ACD /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		DB8BD28525C402A400406ACD /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		DB8BD28725C402A400406ACD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DB8BD28825C402A400406ACD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DB8BD28B25C402A400406ACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB8BD28D25C402A500406ACD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB8BD29025C402A500406ACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DB8BD29225C402A500406ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB8BD29325C402A500406ACD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DB8BD2C825C41BF300406ACD /* RBKeyboardSupportField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBKeyboardSupportField.m; sourceTree = "<group>"; };
+		DB8BD2C925C41BF300406ACD /* RBKeyboardSupportField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBKeyboardSupportField.h; sourceTree = "<group>"; };
+		DB8BD2E825C55F7600406ACD /* BOOT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BOOT; sourceTree = "<group>"; };
+		DB8BD2EA25C55F7600406ACD /* ql_js.rom */ = {isa = PBXFileReference; lastKnownFileType = file; path = ql_js.rom; sourceTree = "<group>"; };
+		DB8BD2EB25C55F7600406ACD /* tk232.rom */ = {isa = PBXFileReference; lastKnownFileType = file; path = tk232.rom; sourceTree = "<group>"; };
+		DB8BD2EC25C55F7600406ACD /* min198.rom */ = {isa = PBXFileReference; lastKnownFileType = file; path = min198.rom; sourceTree = "<group>"; };
+		DB8BD2ED25C55F7600406ACD /* ql_jm.rom */ = {isa = PBXFileReference; lastKnownFileType = file; path = ql_jm.rom; sourceTree = "<group>"; };
+		DB8BD2EF25C55F7600406ACD /* snake_bas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = snake_bas; sourceTree = "<group>"; };
+		DB8BD2F025C55F7600406ACD /* invaders_bas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = invaders_bas; sourceTree = "<group>"; };
+		DB8BD43425C5618C00406ACD /* rb_renderview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rb_renderview.m; sourceTree = "<group>"; };
+		DB8BD43525C5618C00406ACD /* rb_macapp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rb_macapp.m; sourceTree = "<group>"; };
+		DB8BD43625C5618C00406ACD /* rb_mactoolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rb_mactoolbar.h; sourceTree = "<group>"; };
+		DB8BD43725C5618C00406ACD /* rb_renderview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rb_renderview.h; sourceTree = "<group>"; };
+		DB8BD43825C5618C00406ACD /* rb_mactoolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rb_mactoolbar.m; sourceTree = "<group>"; };
+		DB8BD43A25C5618C00406ACD /* rb_close_code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rb_close_code.h; sourceTree = "<group>"; };
+		DB8BD43B25C5618C00406ACD /* rb_screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rb_screen.h; sourceTree = "<group>"; };
+		DB8BD43C25C5618C00406ACD /* rb_virtual_keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rb_virtual_keys.h; sourceTree = "<group>"; };
+		DB8BD43D25C5618C00406ACD /* rb_endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rb_endian.h; sourceTree = "<group>"; };
+		DB8BD43E25C5618C00406ACD /* rb_begin_code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rb_begin_code.h; sourceTree = "<group>"; };
+		DB8BD43F25C5618C00406ACD /* rb_screen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rb_screen.c; sourceTree = "<group>"; };
+		DB8BD44125C5618C00406ACD /* QL_serial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QL_serial.h; sourceTree = "<group>"; };
+		DB8BD44225C5618C00406ACD /* QL_filespriv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QL_filespriv.h; sourceTree = "<group>"; };
+		DB8BD44325C5618C00406ACD /* QL_mouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QL_mouse.h; sourceTree = "<group>"; };
+		DB8BD44425C5618C00406ACD /* QL_ip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QL_ip.h; sourceTree = "<group>"; };
+		DB8BD44525C5618C00406ACD /* QL_config.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QL_config.c; sourceTree = "<group>"; };
+		DB8BD44625C5618C00406ACD /* QL_sound.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QL_sound.c; sourceTree = "<group>"; };
+		DB8BD44725C5618C00406ACD /* QL_hardware.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QL_hardware.c; sourceTree = "<group>"; };
+		DB8BD44825C5618C00406ACD /* QL_vfs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QL_vfs.c; sourceTree = "<group>"; };
+		DB8BD44925C5618C00406ACD /* QL_screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QL_screen.h; sourceTree = "<group>"; };
+		DB8BD44A25C5618C00406ACD /* QL_68000.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QL_68000.h; sourceTree = "<group>"; };
+		DB8BD44B25C5618C00406ACD /* QL_disk.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QL_disk.c; sourceTree = "<group>"; };
+		DB8BD44C25C5618C00406ACD /* QL_serio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QL_serio.c; sourceTree = "<group>"; };
+		DB8BD44D25C5618C00406ACD /* QL_instaddr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QL_instaddr.h; sourceTree = "<group>"; };
+		DB8BD44E25C5618C00406ACD /* QL_driver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QL_driver.c; sourceTree = "<group>"; };
+		DB8BD44F25C5618C00406ACD /* QL_boot.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QL_boot.c; sourceTree = "<group>"; };
+		DB8BD45025C5618C00406ACD /* QL_files.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QL_files.h; sourceTree = "<group>"; };
+		DB8BD45125C5618C00406ACD /* QL_cconv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QL_cconv.c; sourceTree = "<group>"; };
+		DB8BD45225C5618C00406ACD /* QL_basext.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QL_basext.c; sourceTree = "<group>"; };
+		DB8BD45325C5618C00406ACD /* QL_serial.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QL_serial.c; sourceTree = "<group>"; };
+		DB8BD45425C5618C00406ACD /* QL_emulator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QL_emulator.c; sourceTree = "<group>"; };
+		DB8BD45525C5618C00406ACD /* QL_vfs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QL_vfs.h; sourceTree = "<group>"; };
+		DB8BD45625C5618C00406ACD /* QL_hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QL_hardware.h; sourceTree = "<group>"; };
+		DB8BD45725C5618C00406ACD /* QL_sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QL_sound.h; sourceTree = "<group>"; };
+		DB8BD45825C5618C00406ACD /* QL_mouse.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QL_mouse.c; sourceTree = "<group>"; };
+		DB8BD45925C5618C00406ACD /* QL_ip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QL_ip.c; sourceTree = "<group>"; };
+		DB8BD45A25C5618C00406ACD /* QL_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QL_config.h; sourceTree = "<group>"; };
+		DB8BD45B25C5618C00406ACD /* QDOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDOS.h; sourceTree = "<group>"; };
+		DB8BD45C25C5618C00406ACD /* QL_screen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QL_screen.c; sourceTree = "<group>"; };
+		DB8BD45D25C5618C00406ACD /* QL_poll.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QL_poll.c; sourceTree = "<group>"; };
+		DB8BD45E25C5618C00406ACD /* QL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QL.h; sourceTree = "<group>"; };
+		DB8BD45F25C5618C00406ACD /* QL_traps.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QL_traps.c; sourceTree = "<group>"; };
+		DB8BD46025C5618C00406ACD /* QL_files.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QL_files.c; sourceTree = "<group>"; };
+		DB8BD46125C5618C00406ACD /* QL_disk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QL_disk.h; sourceTree = "<group>"; };
+		DB8BD46325C5618C00406ACD /* base_instructions_pz.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_instructions_pz.c; sourceTree = "<group>"; };
+		DB8BD46425C5618C00406ACD /* base_xc68.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_xc68.c; sourceTree = "<group>"; };
+		DB8BD46525C5618C00406ACD /* base_xcodes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_xcodes.c; sourceTree = "<group>"; };
+		DB8BD46625C5618C00406ACD /* base_util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_util.h; sourceTree = "<group>"; };
+		DB8BD46725C5618C00406ACD /* base_bdi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_bdi.c; sourceTree = "<group>"; };
+		DB8BD46825C5618C00406ACD /* base_iexl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_iexl.h; sourceTree = "<group>"; };
+		DB8BD46925C5618C00406ACD /* base_pty.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_pty.c; sourceTree = "<group>"; };
+		DB8BD46A25C5618C00406ACD /* base_iptraps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_iptraps.h; sourceTree = "<group>"; };
+		DB8BD46B25C5618C00406ACD /* base_iexl_general.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_iexl_general.c; sourceTree = "<group>"; };
+		DB8BD46C25C5618C00406ACD /* base_script.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_script.c; sourceTree = "<group>"; };
+		DB8BD46D25C5618C00406ACD /* base_general.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_general.h; sourceTree = "<group>"; };
+		DB8BD46E25C5618C00406ACD /* base_uxfile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_uxfile.c; sourceTree = "<group>"; };
+		DB8BD46F25C5618C00406ACD /* base_unix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_unix.h; sourceTree = "<group>"; };
+		DB8BD47025C5618C00406ACD /* base_proto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_proto.h; sourceTree = "<group>"; };
+		DB8BD47125C5618C00406ACD /* base_cond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_cond.h; sourceTree = "<group>"; };
+		DB8BD47225C5618C00406ACD /* base_vm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_vm.c; sourceTree = "<group>"; };
+		DB8BD47325C5618C00406ACD /* base_memaccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_memaccess.h; sourceTree = "<group>"; };
+		DB8BD47425C5618C00406ACD /* base_cfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_cfg.h; sourceTree = "<group>"; };
+		DB8BD47525C5618C00406ACD /* base_trace.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_trace.c; sourceTree = "<group>"; };
+		DB8BD47625C5618C00406ACD /* base_cow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_cow.h; sourceTree = "<group>"; };
+		DB8BD47725C5618C00406ACD /* base_qmtrap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_qmtrap.c; sourceTree = "<group>"; };
+		DB8BD47825C5618C00406ACD /* base_util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_util.c; sourceTree = "<group>"; };
+		DB8BD47925C5618C00406ACD /* base_xcodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_xcodes.h; sourceTree = "<group>"; };
+		DB8BD47A25C5618C00406ACD /* base_xc68.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_xc68.h; sourceTree = "<group>"; };
+		DB8BD47B25C5618C00406ACD /* base_emudisk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_emudisk.h; sourceTree = "<group>"; };
+		DB8BD47C25C5618C00406ACD /* base_driver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_driver.h; sourceTree = "<group>"; };
+		DB8BD47D25C5618C00406ACD /* base_misdefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_misdefs.h; sourceTree = "<group>"; };
+		DB8BD47E25C5618C00406ACD /* base_bdi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_bdi.h; sourceTree = "<group>"; };
+		DB8BD47F25C5618C00406ACD /* base_dummies.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_dummies.c; sourceTree = "<group>"; };
+		DB8BD48025C5618C00406ACD /* base_boot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_boot.h; sourceTree = "<group>"; };
+		DB8BD48125C5618C00406ACD /* rb_main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rb_main.c; sourceTree = "<group>"; };
+		DB8BD48225C5618C00406ACD /* base_uxfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_uxfile.h; sourceTree = "<group>"; };
+		DB8BD48325C5618C00406ACD /* base_general.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_general.c; sourceTree = "<group>"; };
+		DB8BD48425C5618C00406ACD /* base_iexl_general.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_iexl_general.h; sourceTree = "<group>"; };
+		DB8BD48525C5618C00406ACD /* base_instructions_ao.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_instructions_ao.c; sourceTree = "<group>"; };
+		DB8BD48625C5618C00406ACD /* base_script.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_script.h; sourceTree = "<group>"; };
+		DB8BD48725C5618C00406ACD /* base_trace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_trace.h; sourceTree = "<group>"; };
+		DB8BD48825C5618C00406ACD /* base_cfg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_cfg.c; sourceTree = "<group>"; };
+		DB8BD48925C5618C00406ACD /* base_version.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_version.c; sourceTree = "<group>"; };
+		DB8BD48A25C5618C00406ACD /* base_memaccess.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_memaccess.c; sourceTree = "<group>"; };
+		DB8BD48B25C5618C00406ACD /* base_init.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base_init.c; sourceTree = "<group>"; };
+		DB8BD48C25C5618C00406ACD /* base_mmodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_mmodes.h; sourceTree = "<group>"; };
+		DB8BD50425C565D100406ACD /* rb_settings.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rb_settings.c; sourceTree = "<group>"; };
+		DB8BD50B25C5689100406ACD /* rb_platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rb_platform.h; sourceTree = "<group>"; };
+		DB8BD50C25C5689100406ACD /* rb_platform.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rb_platform.m; sourceTree = "<group>"; };
+		DB8BD51325C6CAEF00406ACD /* ql.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = ql.ini; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB8BCF5F25C3D2A800406ACD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8BD27C25C402A400406ACD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB8BCF5925C3D2A800406ACD = {
+			isa = PBXGroup;
+			children = (
+				DB8BD51325C6CAEF00406ACD /* ql.ini */,
+				DB8BD43225C5618C00406ACD /* QLemulator */,
+				DB8BD2E625C55F7600406ACD /* QLsystem */,
+				DB8BCF6425C3D2A800406ACD /* iQLmac */,
+				DB8BD28025C402A400406ACD /* iQLios */,
+				DB8BCF6325C3D2A800406ACD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB8BCF6325C3D2A800406ACD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8BCF6225C3D2A800406ACD /* iQLmac.app */,
+				DB8BD27F25C402A400406ACD /* iQLios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8BCF6425C3D2A800406ACD /* iQLmac */ = {
+			isa = PBXGroup;
+			children = (
+				DB8BD4FF25C5631B00406ACD /* assets */,
+				DB8BCF6525C3D2A800406ACD /* AppDelegate.h */,
+				DB8BCF6625C3D2A800406ACD /* AppDelegate.m */,
+			);
+			path = iQLmac;
+			sourceTree = "<group>";
+		};
+		DB8BD28025C402A400406ACD /* iQLios */ = {
+			isa = PBXGroup;
+			children = (
+				DB8BD2E325C554CC00406ACD /* assets */,
+				DB8BD28125C402A400406ACD /* AppDelegate.h */,
+				DB8BD28225C402A400406ACD /* AppDelegate.m */,
+				DB8BD2C925C41BF300406ACD /* RBKeyboardSupportField.h */,
+				DB8BD2C825C41BF300406ACD /* RBKeyboardSupportField.m */,
+				DB8BD28425C402A400406ACD /* SceneDelegate.h */,
+				DB8BD28525C402A400406ACD /* SceneDelegate.m */,
+				DB8BD28725C402A400406ACD /* ViewController.h */,
+				DB8BD28825C402A400406ACD /* ViewController.m */,
+			);
+			path = iQLios;
+			sourceTree = "<group>";
+		};
+		DB8BD2E325C554CC00406ACD /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				DB8BD28A25C402A400406ACD /* Main.storyboard */,
+				DB8BD28D25C402A500406ACD /* Assets.xcassets */,
+				DB8BD28F25C402A500406ACD /* LaunchScreen.storyboard */,
+				DB8BD29225C402A500406ACD /* Info.plist */,
+				DB8BD29325C402A500406ACD /* main.m */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
+		DB8BD2E625C55F7600406ACD /* QLsystem */ = {
+			isa = PBXGroup;
+			children = (
+				DB8BD2E725C55F7600406ACD /* mdv1 */,
+				DB8BD2E925C55F7600406ACD /* roms */,
+				DB8BD2EE25C55F7600406ACD /* mdv2 */,
+			);
+			path = QLsystem;
+			sourceTree = "<group>";
+		};
+		DB8BD2E725C55F7600406ACD /* mdv1 */ = {
+			isa = PBXGroup;
+			children = (
+				DB8BD2E825C55F7600406ACD /* BOOT */,
+			);
+			path = mdv1;
+			sourceTree = "<group>";
+		};
+		DB8BD2E925C55F7600406ACD /* roms */ = {
+			isa = PBXGroup;
+			children = (
+				DB8BD2EC25C55F7600406ACD /* min198.rom */,
+				DB8BD2ED25C55F7600406ACD /* ql_jm.rom */,
+				DB8BD2EA25C55F7600406ACD /* ql_js.rom */,
+				DB8BD2EB25C55F7600406ACD /* tk232.rom */,
+			);
+			path = roms;
+			sourceTree = "<group>";
+		};
+		DB8BD2EE25C55F7600406ACD /* mdv2 */ = {
+			isa = PBXGroup;
+			children = (
+				DB8BD2F025C55F7600406ACD /* invaders_bas */,
+				DB8BD2EF25C55F7600406ACD /* snake_bas */,
+			);
+			path = mdv2;
+			sourceTree = "<group>";
+		};
+		DB8BD43225C5618C00406ACD /* QLemulator */ = {
+			isa = PBXGroup;
+			children = (
+				DB8BD43325C5618C00406ACD /* apple */,
+				DB8BD43925C5618C00406ACD /* platform */,
+				DB8BD44025C5618C00406ACD /* QL */,
+				DB8BD46225C5618C00406ACD /* base */,
+			);
+			path = QLemulator;
+			sourceTree = "<group>";
+		};
+		DB8BD43325C5618C00406ACD /* apple */ = {
+			isa = PBXGroup;
+			children = (
+				DB8BD43525C5618C00406ACD /* rb_macapp.m */,
+				DB8BD43625C5618C00406ACD /* rb_mactoolbar.h */,
+				DB8BD43825C5618C00406ACD /* rb_mactoolbar.m */,
+				DB8BD43725C5618C00406ACD /* rb_renderview.h */,
+				DB8BD43425C5618C00406ACD /* rb_renderview.m */,
+				DB8BD50B25C5689100406ACD /* rb_platform.h */,
+				DB8BD50C25C5689100406ACD /* rb_platform.m */,
+			);
+			path = apple;
+			sourceTree = "<group>";
+		};
+		DB8BD43925C5618C00406ACD /* platform */ = {
+			isa = PBXGroup;
+			children = (
+				DB8BD43E25C5618C00406ACD /* rb_begin_code.h */,
+				DB8BD43A25C5618C00406ACD /* rb_close_code.h */,
+				DB8BD43D25C5618C00406ACD /* rb_endian.h */,
+				DB8BD48125C5618C00406ACD /* rb_main.c */,
+				DB8BD50425C565D100406ACD /* rb_settings.c */,
+				DB8BD43F25C5618C00406ACD /* rb_screen.c */,
+				DB8BD43B25C5618C00406ACD /* rb_screen.h */,
+				DB8BD43C25C5618C00406ACD /* rb_virtual_keys.h */,
+			);
+			path = platform;
+			sourceTree = "<group>";
+		};
+		DB8BD44025C5618C00406ACD /* QL */ = {
+			isa = PBXGroup;
+			children = (
+				DB8BD45B25C5618C00406ACD /* QDOS.h */,
+				DB8BD44A25C5618C00406ACD /* QL_68000.h */,
+				DB8BD45225C5618C00406ACD /* QL_basext.c */,
+				DB8BD44F25C5618C00406ACD /* QL_boot.c */,
+				DB8BD45125C5618C00406ACD /* QL_cconv.c */,
+				DB8BD44525C5618C00406ACD /* QL_config.c */,
+				DB8BD45A25C5618C00406ACD /* QL_config.h */,
+				DB8BD44B25C5618C00406ACD /* QL_disk.c */,
+				DB8BD46125C5618C00406ACD /* QL_disk.h */,
+				DB8BD44E25C5618C00406ACD /* QL_driver.c */,
+				DB8BD45425C5618C00406ACD /* QL_emulator.c */,
+				DB8BD46025C5618C00406ACD /* QL_files.c */,
+				DB8BD45025C5618C00406ACD /* QL_files.h */,
+				DB8BD44225C5618C00406ACD /* QL_filespriv.h */,
+				DB8BD44725C5618C00406ACD /* QL_hardware.c */,
+				DB8BD45625C5618C00406ACD /* QL_hardware.h */,
+				DB8BD44D25C5618C00406ACD /* QL_instaddr.h */,
+				DB8BD45925C5618C00406ACD /* QL_ip.c */,
+				DB8BD44425C5618C00406ACD /* QL_ip.h */,
+				DB8BD45825C5618C00406ACD /* QL_mouse.c */,
+				DB8BD44325C5618C00406ACD /* QL_mouse.h */,
+				DB8BD45D25C5618C00406ACD /* QL_poll.c */,
+				DB8BD45C25C5618C00406ACD /* QL_screen.c */,
+				DB8BD44925C5618C00406ACD /* QL_screen.h */,
+				DB8BD45325C5618C00406ACD /* QL_serial.c */,
+				DB8BD44125C5618C00406ACD /* QL_serial.h */,
+				DB8BD44C25C5618C00406ACD /* QL_serio.c */,
+				DB8BD44625C5618C00406ACD /* QL_sound.c */,
+				DB8BD45725C5618C00406ACD /* QL_sound.h */,
+				DB8BD45F25C5618C00406ACD /* QL_traps.c */,
+				DB8BD44825C5618C00406ACD /* QL_vfs.c */,
+				DB8BD45525C5618C00406ACD /* QL_vfs.h */,
+				DB8BD45E25C5618C00406ACD /* QL.h */,
+			);
+			path = QL;
+			sourceTree = "<group>";
+		};
+		DB8BD46225C5618C00406ACD /* base */ = {
+			isa = PBXGroup;
+			children = (
+				DB8BD46725C5618C00406ACD /* base_bdi.c */,
+				DB8BD47E25C5618C00406ACD /* base_bdi.h */,
+				DB8BD48025C5618C00406ACD /* base_boot.h */,
+				DB8BD48825C5618C00406ACD /* base_cfg.c */,
+				DB8BD47425C5618C00406ACD /* base_cfg.h */,
+				DB8BD47125C5618C00406ACD /* base_cond.h */,
+				DB8BD47625C5618C00406ACD /* base_cow.h */,
+				DB8BD47C25C5618C00406ACD /* base_driver.h */,
+				DB8BD47F25C5618C00406ACD /* base_dummies.c */,
+				DB8BD47B25C5618C00406ACD /* base_emudisk.h */,
+				DB8BD48325C5618C00406ACD /* base_general.c */,
+				DB8BD46D25C5618C00406ACD /* base_general.h */,
+				DB8BD46B25C5618C00406ACD /* base_iexl_general.c */,
+				DB8BD48425C5618C00406ACD /* base_iexl_general.h */,
+				DB8BD46825C5618C00406ACD /* base_iexl.h */,
+				DB8BD48B25C5618C00406ACD /* base_init.c */,
+				DB8BD48525C5618C00406ACD /* base_instructions_ao.c */,
+				DB8BD46325C5618C00406ACD /* base_instructions_pz.c */,
+				DB8BD46A25C5618C00406ACD /* base_iptraps.h */,
+				DB8BD48A25C5618C00406ACD /* base_memaccess.c */,
+				DB8BD47325C5618C00406ACD /* base_memaccess.h */,
+				DB8BD47D25C5618C00406ACD /* base_misdefs.h */,
+				DB8BD48C25C5618C00406ACD /* base_mmodes.h */,
+				DB8BD47025C5618C00406ACD /* base_proto.h */,
+				DB8BD46925C5618C00406ACD /* base_pty.c */,
+				DB8BD47725C5618C00406ACD /* base_qmtrap.c */,
+				DB8BD46C25C5618C00406ACD /* base_script.c */,
+				DB8BD48625C5618C00406ACD /* base_script.h */,
+				DB8BD47525C5618C00406ACD /* base_trace.c */,
+				DB8BD48725C5618C00406ACD /* base_trace.h */,
+				DB8BD46F25C5618C00406ACD /* base_unix.h */,
+				DB8BD47825C5618C00406ACD /* base_util.c */,
+				DB8BD46625C5618C00406ACD /* base_util.h */,
+				DB8BD46E25C5618C00406ACD /* base_uxfile.c */,
+				DB8BD48225C5618C00406ACD /* base_uxfile.h */,
+				DB8BD48925C5618C00406ACD /* base_version.c */,
+				DB8BD47225C5618C00406ACD /* base_vm.c */,
+				DB8BD46425C5618C00406ACD /* base_xc68.c */,
+				DB8BD47A25C5618C00406ACD /* base_xc68.h */,
+				DB8BD46525C5618C00406ACD /* base_xcodes.c */,
+				DB8BD47925C5618C00406ACD /* base_xcodes.h */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		DB8BD4FF25C5631B00406ACD /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				DB8BCF6825C3D2A900406ACD /* Assets.xcassets */,
+				DB8BCF6D25C3D2A900406ACD /* Info.plist */,
+				DB8BCF7025C3D2A900406ACD /* iQLmac.entitlements */,
+				DB8BCF6E25C3D2A900406ACD /* main.m */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB8BCF6125C3D2A800406ACD /* iQLmac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB8BCF7325C3D2A900406ACD /* Build configuration list for PBXNativeTarget "iQLmac" */;
+			buildPhases = (
+				DB8BCF5E25C3D2A800406ACD /* Sources */,
+				DB8BCF5F25C3D2A800406ACD /* Frameworks */,
+				DB8BCF6025C3D2A800406ACD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iQLmac;
+			productName = QLmac;
+			productReference = DB8BCF6225C3D2A800406ACD /* iQLmac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB8BD27E25C402A400406ACD /* iQLios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB8BD29525C402A500406ACD /* Build configuration list for PBXNativeTarget "iQLios" */;
+			buildPhases = (
+				DB8BD27B25C402A400406ACD /* Sources */,
+				DB8BD27C25C402A400406ACD /* Frameworks */,
+				DB8BD27D25C402A400406ACD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iQLios;
+			productName = iQLos;
+			productReference = DB8BD27F25C402A400406ACD /* iQLios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB8BCF5A25C3D2A800406ACD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					DB8BCF6125C3D2A800406ACD = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					DB8BD27E25C402A400406ACD = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = DB8BCF5D25C3D2A800406ACD /* Build configuration list for PBXProject "iQL" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB8BCF5925C3D2A800406ACD;
+			productRefGroup = DB8BCF6325C3D2A800406ACD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB8BCF6125C3D2A800406ACD /* iQLmac */,
+				DB8BD27E25C402A400406ACD /* iQLios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB8BCF6025C3D2A800406ACD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8BD2FA25C55F8200406ACD /* BOOT in Resources */,
+				DB8BD2FF25C55F8800406ACD /* ql_jm.rom in Resources */,
+				DB8BD2FD25C55F8800406ACD /* min198.rom in Resources */,
+				DB8BD2FE25C55F8800406ACD /* ql_js.rom in Resources */,
+				DB8BCF6925C3D2A900406ACD /* Assets.xcassets in Resources */,
+				DB8BD30425C55F9000406ACD /* snake_bas in Resources */,
+				DB8BD30325C55F9000406ACD /* invaders_bas in Resources */,
+				DB8BD30025C55F8800406ACD /* tk232.rom in Resources */,
+				DB8BD51425C6CAEF00406ACD /* ql.ini in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8BD27D25C402A400406ACD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8BD2F525C55F7600406ACD /* ql_jm.rom in Resources */,
+				DB8BD51525C6CAEF00406ACD /* ql.ini in Resources */,
+				DB8BD2F425C55F7600406ACD /* min198.rom in Resources */,
+				DB8BD2F125C55F7600406ACD /* BOOT in Resources */,
+				DB8BD2F725C55F7600406ACD /* invaders_bas in Resources */,
+				DB8BD29125C402A500406ACD /* LaunchScreen.storyboard in Resources */,
+				DB8BD28E25C402A500406ACD /* Assets.xcassets in Resources */,
+				DB8BD28C25C402A400406ACD /* Main.storyboard in Resources */,
+				DB8BD2F225C55F7600406ACD /* ql_js.rom in Resources */,
+				DB8BD2F325C55F7600406ACD /* tk232.rom in Resources */,
+				DB8BD2F625C55F7600406ACD /* snake_bas in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB8BCF5E25C3D2A800406ACD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8BD4DB25C5618C00406ACD /* base_version.c in Sources */,
+				DB8BD4B925C5618C00406ACD /* base_instructions_pz.c in Sources */,
+				DB8BD49925C5618C00406ACD /* QL_hardware.c in Sources */,
+				DB8BD4AB25C5618C00406ACD /* QL_emulator.c in Sources */,
+				DB8BD4DD25C5618D00406ACD /* base_memaccess.c in Sources */,
+				DB8BD4C925C5618C00406ACD /* base_vm.c in Sources */,
+				DB8BD4AD25C5618C00406ACD /* QL_mouse.c in Sources */,
+				DB8BD4D725C5618C00406ACD /* base_instructions_ao.c in Sources */,
+				DB8BD49725C5618C00406ACD /* QL_sound.c in Sources */,
+				DB8BD4C725C5618C00406ACD /* base_uxfile.c in Sources */,
+				DB8BD4BD25C5618C00406ACD /* base_xcodes.c in Sources */,
+				DB8BCF6F25C3D2A900406ACD /* main.m in Sources */,
+				DB8BD4C125C5618C00406ACD /* base_pty.c in Sources */,
+				DB8BD4AF25C5618C00406ACD /* QL_ip.c in Sources */,
+				DB8BD4BB25C5618C00406ACD /* base_xc68.c in Sources */,
+				DB8BD4CF25C5618C00406ACD /* base_util.c in Sources */,
+				DB8BD49525C5618C00406ACD /* QL_config.c in Sources */,
+				DB8BD49D25C5618C00406ACD /* QL_disk.c in Sources */,
+				DB8BD4CB25C5618C00406ACD /* base_trace.c in Sources */,
+				DB8BD49F25C5618C00406ACD /* QL_serio.c in Sources */,
+				DB8BD4C325C5618C00406ACD /* base_iexl_general.c in Sources */,
+				DB8BD4B525C5618C00406ACD /* QL_traps.c in Sources */,
+				DB8BD4EC25C561C700406ACD /* rb_renderview.m in Sources */,
+				DB8BD4B725C5618C00406ACD /* QL_files.c in Sources */,
+				DB8BD49125C5618C00406ACD /* rb_mactoolbar.m in Sources */,
+				DB8BD49325C5618C00406ACD /* rb_screen.c in Sources */,
+				DB8BD4A125C5618C00406ACD /* QL_driver.c in Sources */,
+				DB8BCF6725C3D2A800406ACD /* AppDelegate.m in Sources */,
+				DB8BD4A925C5618C00406ACD /* QL_serial.c in Sources */,
+				DB8BD4C525C5618C00406ACD /* base_script.c in Sources */,
+				DB8BD50D25C5689100406ACD /* rb_platform.m in Sources */,
+				DB8BD4CD25C5618C00406ACD /* base_qmtrap.c in Sources */,
+				DB8BD4B325C5618C00406ACD /* QL_poll.c in Sources */,
+				DB8BD49B25C5618C00406ACD /* QL_vfs.c in Sources */,
+				DB8BD50525C565D100406ACD /* rb_settings.c in Sources */,
+				DB8BD4A325C5618C00406ACD /* QL_boot.c in Sources */,
+				DB8BD4D125C5618C00406ACD /* base_dummies.c in Sources */,
+				DB8BD4A525C5618C00406ACD /* QL_cconv.c in Sources */,
+				DB8BD4BF25C5618C00406ACD /* base_bdi.c in Sources */,
+				DB8BD4D525C5618C00406ACD /* base_general.c in Sources */,
+				DB8BD4DF25C5618D00406ACD /* base_init.c in Sources */,
+				DB8BD4A725C5618C00406ACD /* QL_basext.c in Sources */,
+				DB8BD4D925C5618C00406ACD /* base_cfg.c in Sources */,
+				DB8BD4B125C5618C00406ACD /* QL_screen.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8BD27B25C402A400406ACD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8BD49A25C5618C00406ACD /* QL_hardware.c in Sources */,
+				DB8BD4DA25C5618C00406ACD /* base_cfg.c in Sources */,
+				DB8BD4B425C5618C00406ACD /* QL_poll.c in Sources */,
+				DB8BD4BE25C5618C00406ACD /* base_xcodes.c in Sources */,
+				DB8BD4CC25C5618C00406ACD /* base_trace.c in Sources */,
+				DB8BD4AC25C5618C00406ACD /* QL_emulator.c in Sources */,
+				DB8BD50E25C5689100406ACD /* rb_platform.m in Sources */,
+				DB8BD4C825C5618C00406ACD /* base_uxfile.c in Sources */,
+				DB8BD4D625C5618C00406ACD /* base_general.c in Sources */,
+				DB8BD49E25C5618C00406ACD /* QL_disk.c in Sources */,
+				DB8BD49825C5618C00406ACD /* QL_sound.c in Sources */,
+				DB8BD49425C5618C00406ACD /* rb_screen.c in Sources */,
+				DB8BD4DE25C5618D00406ACD /* base_memaccess.c in Sources */,
+				DB8BD4A625C5618C00406ACD /* QL_cconv.c in Sources */,
+				DB8BD4AE25C5618C00406ACD /* QL_mouse.c in Sources */,
+				DB8BD4A225C5618C00406ACD /* QL_driver.c in Sources */,
+				DB8BD4E925C561C600406ACD /* rb_renderview.m in Sources */,
+				DB8BD4B225C5618C00406ACD /* QL_screen.c in Sources */,
+				DB8BD28925C402A400406ACD /* ViewController.m in Sources */,
+				DB8BD28325C402A400406ACD /* AppDelegate.m in Sources */,
+				DB8BD4D025C5618C00406ACD /* base_util.c in Sources */,
+				DB8BD4B025C5618C00406ACD /* QL_ip.c in Sources */,
+				DB8BD29425C402A500406ACD /* main.m in Sources */,
+				DB8BD28625C402A400406ACD /* SceneDelegate.m in Sources */,
+				DB8BD4C425C5618C00406ACD /* base_iexl_general.c in Sources */,
+				DB8BD4D825C5618C00406ACD /* base_instructions_ao.c in Sources */,
+				DB8BD4A025C5618C00406ACD /* QL_serio.c in Sources */,
+				DB8BD4C225C5618C00406ACD /* base_pty.c in Sources */,
+				DB8BD4AA25C5618C00406ACD /* QL_serial.c in Sources */,
+				DB8BD4C025C5618C00406ACD /* base_bdi.c in Sources */,
+				DB8BD49625C5618C00406ACD /* QL_config.c in Sources */,
+				DB8BD4DC25C5618D00406ACD /* base_version.c in Sources */,
+				DB8BD4BA25C5618C00406ACD /* base_instructions_pz.c in Sources */,
+				DB8BD49C25C5618C00406ACD /* QL_vfs.c in Sources */,
+				DB8BD4A425C5618C00406ACD /* QL_boot.c in Sources */,
+				DB8BD4D225C5618C00406ACD /* base_dummies.c in Sources */,
+				DB8BD4CA25C5618C00406ACD /* base_vm.c in Sources */,
+				DB8BD4CE25C5618C00406ACD /* base_qmtrap.c in Sources */,
+				DB8BD50625C565D100406ACD /* rb_settings.c in Sources */,
+				DB8BD4BC25C5618C00406ACD /* base_xc68.c in Sources */,
+				DB8BD4A825C5618C00406ACD /* QL_basext.c in Sources */,
+				DB8BD4E025C5618D00406ACD /* base_init.c in Sources */,
+				DB8BD2CA25C41BF300406ACD /* RBKeyboardSupportField.m in Sources */,
+				DB8BD4B825C5618C00406ACD /* QL_files.c in Sources */,
+				DB8BD4B625C5618C00406ACD /* QL_traps.c in Sources */,
+				DB8BD4C625C5618C00406ACD /* base_script.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DB8BD28A25C402A400406ACD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB8BD28B25C402A400406ACD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB8BD28F25C402A500406ACD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB8BD29025C402A500406ACD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB8BCF7125C3D2A900406ACD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"NODEBUG_QL=1",
+					"LINUX=1",
+					"QVFS=1",
+					"USE_IOSZ=1",
+					"DO_GRAB=1",
+					"SERIAL=1",
+					"NEWSERIAL=1",
+					"NEWPTY=1",
+					"SH_MEM=1",
+					"IPDEV=1",
+					"HAS_STPCPY=1",
+					"MOUSE=1",
+					"UXWAIT=1",
+					"NOSOUND=1",
+					"NOTRACE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DB8BCF7225C3D2A900406ACD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"LINUX=1",
+					"QVFS=1",
+					"USE_IOSZ=1",
+					"DO_GRAB=1",
+					"SERIAL=1",
+					"NEWSERIAL=1",
+					"NEWPTY=1",
+					"SH_MEM=1",
+					"IPDEV=1",
+					"HAS_STPCPY=1",
+					"MOUSE=1",
+					"UXWAIT=1",
+					"NOSOUND=1",
+					"NOTRACE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DB8BCF7425C3D2A900406ACD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iQLmac/iQLmac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = iQLmac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rogerboesch.iQLmac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DB8BCF7525C3D2A900406ACD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iQLmac/iQLmac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = iQLmac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rogerboesch.iQLmac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DB8BD29625C402A500406ACD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iQLios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rogerboesch.iQios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB8BD29725C402A500406ACD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = iQLios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rogerboesch.iQios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB8BCF5D25C3D2A800406ACD /* Build configuration list for PBXProject "iQL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB8BCF7125C3D2A900406ACD /* Debug */,
+				DB8BCF7225C3D2A900406ACD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB8BCF7325C3D2A900406ACD /* Build configuration list for PBXNativeTarget "iQLmac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB8BCF7425C3D2A900406ACD /* Debug */,
+				DB8BCF7525C3D2A900406ACD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB8BD29525C402A500406ACD /* Build configuration list for PBXNativeTarget "iQLios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB8BD29625C402A500406ACD /* Debug */,
+				DB8BD29725C402A500406ACD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB8BCF5A25C3D2A800406ACD /* Project object */;
+}
