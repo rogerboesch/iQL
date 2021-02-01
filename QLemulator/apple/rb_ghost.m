@@ -66,13 +66,19 @@ NSOperationQueue* s_ghostQueue = NULL;
 
 + (void)copyToPasteboard {
     [s_ghostQueue addOperationWithBlock:^{
-        NSString* path = [NSString stringWithFormat:@"%@ram1/paste", [RBPlatform getDocumentPath]];
+        NSString* path = [NSString stringWithFormat:@"%@mdv1/_paste", [RBPlatform getDocumentPath]];
         NSString* content = [RBPlatform loadContentFromPath:path];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [[NSPasteboard generalPasteboard] clearContents];
             [[NSPasteboard generalPasteboard] setString:content forType:NSPasteboardTypeString];
         });
+    }];
+}
+
++ (void)deleteFile:(NSString *)path {
+    [s_ghostQueue addOperationWithBlock:^{
+        [RBPlatform deleteFile:path];
     }];
 }
 
@@ -91,14 +97,20 @@ NSOperationQueue* s_ghostQueue = NULL;
 }
 
 + (void)loadPasteFile {
-    [RBGhost typeIn:@"load ram1_paste"];
+    [RBGhost typeIn:@"load mdv1__paste"];
+
+    NSString* path = [NSString stringWithFormat:@"%@mdv1/_paste", [RBPlatform getDocumentPath]];
+    [RBGhost deleteFile:path];
 }
 
 + (void)savePasteFile {
-    NSString* path = [NSString stringWithFormat:@"%@ram1/paste", [RBPlatform getDocumentPath]];
+    // To prevent that the QL ask for overwrite
+    NSString* path = [NSString stringWithFormat:@"%@mdv1/_paste", [RBPlatform getDocumentPath]];
     [RBPlatform deleteFile:path];
-    [RBGhost typeIn:@"save ram1_paste"];
+
+    [RBGhost typeIn:@"save mdv1__paste"];
     [RBGhost copyToPasteboard];
+    [RBGhost deleteFile:path];
 }
 
 @end

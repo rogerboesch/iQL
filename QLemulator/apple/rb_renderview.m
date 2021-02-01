@@ -131,7 +131,7 @@ extern void QLRBSendEvent(RBEvent evt);
 
 - (void)paste:(id)sender {
     NSString* str = [[NSPasteboard generalPasteboard] stringForType:NSPasteboardTypeString];
-    NSString* path = [NSString stringWithFormat:@"%@%@%@", [RBPlatform getDocumentPath], @"ram1/", @"paste"];
+    NSString* path = [NSString stringWithFormat:@"%@%@%@", [RBPlatform getDocumentPath], @"mdv1/", @"_paste"];
     [RBPlatform saveContent:str to:path];
     [RBGhost loadPasteFile];
 }
