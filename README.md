@@ -39,11 +39,6 @@ It is currently very much work in progress and still needs much improvement.
 ## Build iQL
  
 To create real macOS, iOS, padOS and Android citizens go with XCode (use iQL.xcodeproj) resp. Android Studio at the moment.
-iQL has cmake support (creates a console app that runs on macos).
- 
-    mkdir build
-    cd build
-    cmake -GXcode ..
  
  
 ## uQlx Emulator
