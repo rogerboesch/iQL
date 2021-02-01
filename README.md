@@ -53,7 +53,7 @@ Therefore the original [documents](/QLemulator/docs/) are still good as a refere
  
 ## Copyright
  
-For copyright of the base emulator files (original uQlx) see and **respect** the copyright of the author: [Copyright information](/QLemulator/docs/COPYRIGHT)
+For copyright informations of the base emulator files (original uQlx) see and **respect** the copyright of the author: [Copyright information](/QLemulator/docs/COPYRIGHT)
  
 **All my changes are free to use and explicitly without any copyrights or limitations.**
  
