@@ -1,7 +1,7 @@
 # iQL
  
 iQL is a Sinclair QL emulator based on uQlx with the focus on mobile devices.
-
+It will be used as part of the 
 The current implementation works fine for:
  
 - iOS
@@ -29,6 +29,11 @@ The second area of changes made impact the entire user interface and user input:
 - *Touch support (not yet finished)*
  
 It is currently very much work in progress and still needs much improvement.
+ 
+ ## TODO
+ 
+ - Copy/Paste code (to simplfy exchange of SuperBasic ocde)
+ - iCloud/Google Drive integration (To add disc images and files to iQL)
  
  
 ## Build iQL
