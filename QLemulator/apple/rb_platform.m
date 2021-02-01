@@ -32,6 +32,13 @@ char resourcePath[256];
     }
 }
 
++ (void)deleteFile:(NSString*)atPath {
+    NSURL* url = [NSURL fileURLWithPath:atPath];
+
+    NSError *error;
+    [[NSFileManager defaultManager] removeItemAtURL:url error:&error];
+}
+
 + (void)createFolder:(NSString*)name {
     NSURL* url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     NSString* path = [url path];
@@ -57,11 +64,7 @@ char resourcePath[256];
 + (NSString *)getTemporaryPath {
     NSString* path = [RBPlatform getDocumentPath];
 
-#if TARGET_OS_IOS
-    path = [NSString stringWithFormat:@"%@/temp/", path];
-#else
-    path = [NSString stringWithFormat:@"%@/iQLmac/temp/", path];
-#endif
+    path = [NSString stringWithFormat:@"%@temp/", path];
 
     return path;
 }
@@ -71,6 +74,20 @@ char resourcePath[256];
     path = [NSString stringWithFormat:@"%@/", path];
 
     return path;
+}
+
++ (BOOL)saveContent:(NSString *)str to:(NSString *)path {
+    NSError *error;
+    [str writeToFile:path atomically:NO encoding:NSUTF8StringEncoding error:&error];
+    
+    return error == NULL ? YES : NO;
+}
+
++ (NSString *)loadContentFromPath:(NSString *)path {
+    NSError *error;
+    NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
+    
+    return content;
 }
 
 @end

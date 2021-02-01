@@ -11,9 +11,13 @@
 
 + (void)createFolder:(NSString*)name;
 + (void)copyFile:(NSString*)fromPath to:(NSString*)toPath overwrite:(BOOL)flag;
++ (void)deleteFile:(NSString*)atPath;
 
 + (NSString *)getDocumentPath;
 + (NSString *)getTemporaryPath;
 + (NSString *)getResourcePath;
+
++ (BOOL)saveContent:(NSString *)str to:(NSString *)path;
++ (NSString *)loadContentFromPath:(NSString *)path;
 
 @end

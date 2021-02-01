@@ -7,6 +7,7 @@
 
 #import "AppDelegate.h"
 #import "rb_platform.h"
+#import "rb_ghost.h"
 
 extern int QLStart(void);
 extern void QLRestart(void);
@@ -36,7 +37,11 @@ static AppDelegate* s_appDelegate;
 
 @implementation AppDelegate
 
-- (void)createMiniMenu {
+- (void)copySuperBasicCode:(id)sender {
+    [RBGhost savePasteFile];
+}
+
+- (void)createAppMenu {
     self.menu = [[NSMenu alloc] initWithTitle:@"MainMenu"];
     NSApp.mainMenu = self.menu;
     NSMenuItem *submenu = [self.menu addItemWithTitle:@"Application" action:nil keyEquivalent:@""];
@@ -46,6 +51,15 @@ static AppDelegate* s_appDelegate;
     NSString* title = @"Quit";
     NSMenuItem *item = [menu addItemWithTitle:title action:@selector(terminate:) keyEquivalent:@"q"];
     item.target = NSApp;
+}
+
+- (void)createEditMenu {
+    NSMenuItem *submenu = [self.menu addItemWithTitle:@"Edit" action:nil keyEquivalent:@""];
+    NSMenu *menu = [[NSMenu alloc] initWithTitle:@"Edit"];
+    [self.menu setSubmenu:menu forItem:submenu];
+
+    [menu addItemWithTitle:@"Copy SuperBasic code" action:@selector(copySuperBasicCode:) keyEquivalent:@"c"];
+    [menu addItemWithTitle:@"Paste SuperBasic code" action:@selector(paste:) keyEquivalent:@"v"];
 }
 
 - (void)createToolbar {
@@ -161,7 +175,8 @@ static AppDelegate* s_appDelegate;
     [self createQLSystem];
 
     [self setupWindow];
-    [self createMiniMenu];
+    [self createAppMenu];
+    [self createEditMenu];
     [self createToolbar];
 
     self.fireTimer = [NSTimer timerWithTimeInterval:EMULATOR_SPEED target:self selector:@selector(triggerQL) userInfo:nil repeats:YES];

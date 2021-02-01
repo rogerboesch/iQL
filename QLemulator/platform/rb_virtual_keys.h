@@ -8,6 +8,8 @@
 #ifndef RB_VIRTUAL_KEY_H
 #define RB_VIRTUAL_KEY_H
 
+#define KeyCharacterSet "ABCDEFGHIJKLMNOPQRSTUVWXZY0123456789()[]{}:;,.'\"/\\~=-+-*/<>!?@#$%^&|_` \t\r\0\b\e"
+
 typedef enum _RBVirtualKey {
 	RBVK_Unknown = -1, 		// Unhandled key
 	RBVK_A = 0,        		// The A key
@@ -188,5 +190,8 @@ typedef struct _RBEvent {
     int mouseX;         // Mouse x pos
     int mouseY;         // Mouse y pos
 } RBEvent;
+
+int character_to_vk(char ch);
+int ql_shift_key_fixes(char ch, int keyCode);
 
 #endif

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		346F737C25C8027C00A1FF55 /* rb_ghost.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F737B25C8027C00A1FF55 /* rb_ghost.m */; };
+		346F738225C8058F00A1FF55 /* rb_virtual_keys.c in Sources */ = {isa = PBXBuildFile; fileRef = 346F738125C8058F00A1FF55 /* rb_virtual_keys.c */; };
 		DB8BCF6725C3D2A800406ACD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8BCF6625C3D2A800406ACD /* AppDelegate.m */; };
 		DB8BCF6925C3D2A900406ACD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB8BCF6825C3D2A900406ACD /* Assets.xcassets */; };
 		DB8BCF6F25C3D2A900406ACD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8BCF6E25C3D2A900406ACD /* main.m */; };
@@ -120,6 +122,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		346F737A25C8027C00A1FF55 /* rb_ghost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rb_ghost.h; sourceTree = "<group>"; };
+		346F737B25C8027C00A1FF55 /* rb_ghost.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rb_ghost.m; sourceTree = "<group>"; };
+		346F738125C8058F00A1FF55 /* rb_virtual_keys.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rb_virtual_keys.c; sourceTree = "<group>"; };
 		DB8BCF6225C3D2A800406ACD /* iQLmac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQLmac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8BCF6525C3D2A800406ACD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DB8BCF6625C3D2A800406ACD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -369,13 +374,15 @@
 		DB8BD43325C5618C00406ACD /* apple */ = {
 			isa = PBXGroup;
 			children = (
+				346F737A25C8027C00A1FF55 /* rb_ghost.h */,
+				346F737B25C8027C00A1FF55 /* rb_ghost.m */,
 				DB8BD43525C5618C00406ACD /* rb_macapp.m */,
 				DB8BD43625C5618C00406ACD /* rb_mactoolbar.h */,
 				DB8BD43825C5618C00406ACD /* rb_mactoolbar.m */,
-				DB8BD43725C5618C00406ACD /* rb_renderview.h */,
-				DB8BD43425C5618C00406ACD /* rb_renderview.m */,
 				DB8BD50B25C5689100406ACD /* rb_platform.h */,
 				DB8BD50C25C5689100406ACD /* rb_platform.m */,
+				DB8BD43725C5618C00406ACD /* rb_renderview.h */,
+				DB8BD43425C5618C00406ACD /* rb_renderview.m */,
 			);
 			path = apple;
 			sourceTree = "<group>";
@@ -391,6 +398,7 @@
 				DB8BD43F25C5618C00406ACD /* rb_screen.c */,
 				DB8BD43B25C5618C00406ACD /* rb_screen.h */,
 				DB8BD43C25C5618C00406ACD /* rb_virtual_keys.h */,
+				346F738125C8058F00A1FF55 /* rb_virtual_keys.c */,
 			);
 			path = platform;
 			sourceTree = "<group>";
@@ -615,8 +623,10 @@
 				DB8BD4DD25C5618D00406ACD /* base_memaccess.c in Sources */,
 				DB8BD4C925C5618C00406ACD /* base_vm.c in Sources */,
 				DB8BD4AD25C5618C00406ACD /* QL_mouse.c in Sources */,
+				346F738225C8058F00A1FF55 /* rb_virtual_keys.c in Sources */,
 				DB8BD4D725C5618C00406ACD /* base_instructions_ao.c in Sources */,
 				DB8BD49725C5618C00406ACD /* QL_sound.c in Sources */,
+				346F737C25C8027C00A1FF55 /* rb_ghost.m in Sources */,
 				DB8BD4C725C5618C00406ACD /* base_uxfile.c in Sources */,
 				DB8BD4BD25C5618C00406ACD /* base_xcodes.c in Sources */,
 				DB8BCF6F25C3D2A900406ACD /* main.m in Sources */,
