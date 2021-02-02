@@ -1,8 +1,10 @@
 # iQL
  
 iQL is a Sinclair QL emulator based on uQlx with the focus on mobile devices.
-It will be used as part of the 
-The current implementation works fine for:
+It will be used as part of [The Classics Coder App](http://classicscoder.com/)
+
+
+The current implementation works fine on:
  
 - iOS
 - padOS
