@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		346F737C25C8027C00A1FF55 /* rb_ghost.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F737B25C8027C00A1FF55 /* rb_ghost.m */; };
 		346F738225C8058F00A1FF55 /* rb_virtual_keys.c in Sources */ = {isa = PBXBuildFile; fileRef = 346F738125C8058F00A1FF55 /* rb_virtual_keys.c */; };
+		346F738525C9348600A1FF55 /* rb_virtual_keys.c in Sources */ = {isa = PBXBuildFile; fileRef = 346F738125C8058F00A1FF55 /* rb_virtual_keys.c */; };
+		346F738C25C98ED600A1FF55 /* rb_ghost.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F737B25C8027C00A1FF55 /* rb_ghost.m */; };
 		DB8BCF6725C3D2A800406ACD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8BCF6625C3D2A800406ACD /* AppDelegate.m */; };
 		DB8BCF6925C3D2A900406ACD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB8BCF6825C3D2A900406ACD /* Assets.xcassets */; };
 		DB8BCF6F25C3D2A900406ACD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8BCF6E25C3D2A900406ACD /* main.m */; };
@@ -313,8 +315,8 @@
 		DB8BD2E325C554CC00406ACD /* assets */ = {
 			isa = PBXGroup;
 			children = (
-				DB8BD28A25C402A400406ACD /* Main.storyboard */,
 				DB8BD28D25C402A500406ACD /* Assets.xcassets */,
+				DB8BD28A25C402A400406ACD /* Main.storyboard */,
 				DB8BD28F25C402A500406ACD /* LaunchScreen.storyboard */,
 				DB8BD29225C402A500406ACD /* Info.plist */,
 				DB8BD29325C402A500406ACD /* main.m */,
@@ -686,6 +688,7 @@
 				DB8BD4AE25C5618C00406ACD /* QL_mouse.c in Sources */,
 				DB8BD4A225C5618C00406ACD /* QL_driver.c in Sources */,
 				DB8BD4E925C561C600406ACD /* rb_renderview.m in Sources */,
+				346F738525C9348600A1FF55 /* rb_virtual_keys.c in Sources */,
 				DB8BD4B225C5618C00406ACD /* QL_screen.c in Sources */,
 				DB8BD28925C402A400406ACD /* ViewController.m in Sources */,
 				DB8BD28325C402A400406ACD /* AppDelegate.m in Sources */,
@@ -713,6 +716,7 @@
 				DB8BD4E025C5618D00406ACD /* base_init.c in Sources */,
 				DB8BD2CA25C41BF300406ACD /* RBKeyboardSupportField.m in Sources */,
 				DB8BD4B825C5618C00406ACD /* QL_files.c in Sources */,
+				346F738C25C98ED600A1FF55 /* rb_ghost.m in Sources */,
 				DB8BD4B625C5618C00406ACD /* QL_traps.c in Sources */,
 				DB8BD4C625C5618C00406ACD /* base_script.c in Sources */,
 			);
@@ -927,6 +931,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F46T393V5A;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -950,6 +955,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F46T393V5A;
 				INFOPLIST_FILE = iQLios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (

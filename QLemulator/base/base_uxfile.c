@@ -31,6 +31,7 @@
 #include "QDOS.h"
 
 extern char* rb_get_temporary_path(void);
+extern void rb_platform_load_file_from_cloud(char* mountPath);
 
 /* DIR_SEPARATOR specifies how directories will be listed, I prefer the unixish variant */
 /* but QPAC2 doesn't */
@@ -142,16 +143,19 @@ int uxLookupDir(char *mount, char *qdname, struct mdvFile *f, char *uxname,
 	return match(mount, uxname, temp, 1, 0, 320, fstype);
 }
 
-int uxLookupFile(char *mount, char *qdname, struct mdvFile *f, char *uxname,
-		 int create, int fstype)
-{
+int uxLookupFile(char *mount, char *qdname, struct mdvFile *f, char *uxname, int create, int fstype) {
 	int qlen;
-	char *p1, *p2, temp[256];
+	char temp[256];
 
 	qlen = RW((Ptr)qdname);
 	strncpy(temp, qdname + 2, 36);
 	uxname[0] = 0;
 
+    if (strcmp(temp, "_cloud") == 0) {
+        rb_platform_load_file_from_cloud(mount);
+        return 0;
+    }
+    
 	return match(mount, uxname, temp, 0, create, 320, fstype);
 }
 

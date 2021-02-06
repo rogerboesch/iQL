@@ -348,7 +348,8 @@ extern void QLRBSendEvent(RBEvent evt);
 - (void)setFrame:(CGRect)frame {
 	[super setFrame:frame];
 
-	self.renderImageView.frame = self.bounds;
+    if (frame.size.width > frame.size.height)
+	self.renderImageView.frame = CGRectMake(0, 80, self.bounds.size.width, 256);
 }
 
 #pragma mark - Initialisation
@@ -359,7 +360,7 @@ extern void QLRBSendEvent(RBEvent evt);
 #if TARGET_OS_IOS
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
-    self.renderImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    self.renderImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 80, self.bounds.size.width, 256)];
     self.renderImageView.backgroundColor = UIColor.blackColor;
     self.renderImageView.contentMode = UIViewContentModeScaleAspectFit;
     self.renderImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;

@@ -32,6 +32,10 @@
 
 #include <stdint.h>
 
+#define SDL_reinterpret_cast(type, expression) ((type)(expression))
+#define SDL_static_cast(type, expression) ((type)(expression))
+#define SDL_const_cast(type, expression) ((type)(expression))
+
 /**
  * \brief An unsigned 16-bit integer type.
  */

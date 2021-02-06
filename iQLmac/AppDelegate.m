@@ -66,7 +66,7 @@ static AppDelegate* s_appDelegate;
     self.toolbar = [[RBToolbar alloc] initWithIdentifier:@"AppToolbar"];
     self.toolbar.callback = self;
     
-    [self.toolbar addSegment:@"Speed" labels:@[@"Normal", @"Slow"] width:100];
+    [self.toolbar addSegment:@"Speed" labels:@[@"Normal", @"Slow"] images:@[[NSImage imageNamed:@"SpeedNormal"], [NSImage imageNamed:@"SpeedSlow"]] width:100];
     
     [self.toolbar addItem:@"Reset" image:[NSImage imageNamed:NSImageNameSlideshowTemplate]];
     [self.toolbar setLabel:@"Reset" forItem:@"Reset"];
@@ -241,6 +241,10 @@ static AppDelegate* s_appDelegate;
 }
 
 @end
+
+void rb_platform_load_file_from_cloud(char* mountPath) {
+    // Just needed on iOS
+}
 
 void ql_set_title(char* title) {
     NSString* str = [[NSString alloc] initWithCString:title encoding:NSUTF8StringEncoding];

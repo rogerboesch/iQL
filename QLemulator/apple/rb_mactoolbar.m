@@ -111,7 +111,7 @@
     [self.entries setObject:item forKey:name];
 }
 
-- (void)addSegment:(NSString *)name labels:(NSArray *)labels width:(CGFloat)width {
+- (void)addSegment:(NSString *)name labels:(NSArray *)labels images:(NSArray *)images width:(CGFloat)width {
     NSToolbarItem* item = [self.entries objectForKey:name];
     if (item != nil) {
         return;
@@ -126,7 +126,12 @@
     segment.frame = NSMakeRect(0, 0, (CGFloat)labels.count*width+10, 32);
     segment.segmentStyle = NSSegmentStyleTexturedRounded;
     segment.tag = self.identifiers.count;
-
+    
+    for (int i = 0; i < images.count; i++) {
+        [segment setImage:[images objectAtIndex:i] forSegment:i];
+        [segment setLabel:@"" forSegment:i];
+    }
+    
     // Add Item
     item = [[NSToolbarItem alloc] initWithItemIdentifier:name];
     item.label = name;

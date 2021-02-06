@@ -22,7 +22,7 @@
 - (void)setImage:(NSImage *)image forItem:(NSString *)name;
 
 - (void)addItem:(NSString *)name image:(NSImage *)image;
-- (void)addSegment:(NSString *)name labels:(NSArray *)labels width:(CGFloat)width;
+- (void)addSegment:(NSString *)name labels:(NSArray *)labels images:(NSArray *)images width:(CGFloat)width;
 - (void)enableSegment:(NSString *)name enable:(BOOL)enable;
 
 - (int)selectionForSegment:(NSString *)name;

@@ -5,7 +5,13 @@
 //  "You can do whatever you like with it"
 //
 
-#import <Foundation/Foundation.h>
+#import "TargetConditionals.h"
+
+#if TARGET_OS_IOS
+#import <UIKit/UIKit.h>
+#else
+#import <AppKit/AppKit.h>
+#endif
 
 @interface RBGhost : NSObject
 

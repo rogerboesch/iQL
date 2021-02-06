@@ -5,8 +5,6 @@
 //  "You can do whatever you like with it"
 //
 
-#import <AppKit/AppKit.h>
-
 #import "rb_ghost.h"
 #import "rb_virtual_keys.h"
 #import "rb_platform.h"
@@ -70,8 +68,12 @@ NSOperationQueue* s_ghostQueue = NULL;
         NSString* content = [RBPlatform loadContentFromPath:path];
         
         dispatch_async(dispatch_get_main_queue(), ^{
+#if TARGET_OS_IOS
+            [[UIPasteboard generalPasteboard] setString:content];
+#else
             [[NSPasteboard generalPasteboard] clearContents];
             [[NSPasteboard generalPasteboard] setString:content forType:NSPasteboardTypeString];
+#endif
         });
     }];
 }
