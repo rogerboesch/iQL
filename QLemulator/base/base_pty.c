@@ -81,6 +81,7 @@
 #endif
 
 #include "base_proto.h"
+#include "rb_logger.h"
 
 #if !defined(NFILES)
 #define NFILES	64	/* take a wild guess */
@@ -133,7 +134,7 @@ typedef int		pid_t;
 
 void fake_tty_close(FakeTerm);
 FakeTerm fake_tty_open(char *);
-void pty_cleanup(pid_t pid, int id);
+void pty_cleanup(pid_t pid, unsigned long id, int failcode);
 
 #ifdef NEWPTY
 
@@ -244,7 +245,7 @@ static void fork_process(FakeTerm w)
 	  signal(SIGCHLD, SIG_DFL);
 
       	  if (setsid() < 0)
-               puts ("failed to set process group");
+               rb_log_error("failed to set process group");
 
 	  /* Close everything in sight */
 	  for (i = 0; i < NFILES; i++)
@@ -278,7 +279,7 @@ static void fork_process(FakeTerm w)
 	   * sleep for some time before exiting to let the user read
 	   * the message
 	   */
-	  printf ("### pty error message: Couldn't exec %s\t ### (ERROR %d)\n", argp[0], PROC_EXEC_FAILED);
+	  rb_log_error("pty error message: Couldn't exec %s\t (ERROR %d)", argp[0], PROC_EXEC_FAILED);
 	  sleep(5);
 
     // FIXME: Proper error handling, before just exit
@@ -321,16 +322,16 @@ static char * tty_find_pty(FakeTerm w)
     {
         err=grantpt(w->master);
         if (err < 0) {
-        	perror("Granting PTY\n");
+        	rb_log_error("Granting PTY failed");
         	return NULL;
         }
         err = unlockpt(w->master);
         if (err < 0) {
-        	perror("Unlocking PTY\n");
+        	rb_log_error("Unlocking PTY failed");
         	return NULL;
         }
         pty = ptsname(w->master);
-        fprintf(stderr, "Using XOPEN pty %s\n", pty);
+        rb_log_info("Using XOPEN pty %s", pty);
         if((w->slave = open(pty, O_RDWR,0)) >= 0)
         {
             return strdup(pty);
@@ -361,7 +362,7 @@ static void tty_set_size(FakeTerm w, int rows, int cols, int width, int height)
 #endif
 }
 
-void pty_cleanup(pid_t pid, int id)
+void pty_cleanup(pid_t pid, unsigned long id, int failcode)
 {
      FakeTerm tp;
 
@@ -589,7 +590,7 @@ int main(int ac, char *av)
 {
     if(fake_tty_open () > 0)
     {
-	printf("fds are %d %d\n", w->master, w->slave);
+	rb_log_debug("fds are %d %d", w->master, w->slave);
 	fake_handle_process();
 	fake_tty_close();
     }

@@ -26,6 +26,7 @@
 #include "base_uxfile.h"
 #include "base_emudisk.h"
 #include "base_cfg.h"
+#include "rb_logger.h"
 
 char* rb_get_resource_path(void);
 char* rb_get_system_path(void);
@@ -102,8 +103,8 @@ void CheckDev(EMUDEV_t *qd, char *d1, char *d2, char *d3)
 	}
 
 	if (idev == -1 && lfree == -1) {
-		printf("sorry, no more free entries in Directory Device Driver table\n");
-		printf("check your ini if you really need all this devices\n");
+		rb_log_error("sorry, no more free entries in Directory Device Driver table");
+		rb_log_error("check your ini if you really need all this devices");
 
 		return;
 	}
@@ -144,8 +145,8 @@ void CheckDev(EMUDEV_t *qd, char *d1, char *d2, char *d3)
                     
 					err = stat(dnam, &sbuf);
 					if (V1 && err < 0 && strcasecmp((qd + idev)->qname, "ram")) {
-                        printf("problem, stat failed\n");
-						printf(" - MountPoint %s for device %s%d_ may not be accessible\n", dnam, (qd + idev)->qname, ndev);
+                        rb_log_error("problem, stat failed");
+						rb_log_error(" - MountPoint %s for device %s%d_ may not be accessible", dnam, (qd + idev)->qname, ndev);
 
 					} else {
 						if (sbuf.st_mode == S_IFDIR) {
@@ -180,8 +181,7 @@ void CheckDev(EMUDEV_t *qd, char *d1, char *d2, char *d3)
 				flag_set |= (qd + idev)->clean[ndev - 1] =
 					(strstr(d3, "clean") != NULL);
 				if (!flag_set)
-					printf("WARNING: flag %s in definition of %s%d_ not recognised\n",
-					       d3, d1, ndev);
+					rb_log_info("WARNING: flag %s in definition of %s%d_ not recognised", d3, d1, ndev);
 			}
 		}
 	}
@@ -227,8 +227,17 @@ static void ParseDevs(EMUDEV_t **qd, char *s)
 	}
 	if (d1 && *d1) {
         char path[256];
-        strcpy(path, rb_get_system_path());
-        strcat(path, d2);
+        
+        // Check if d2 is already an absolute path (starts with /)
+        if (d2 && d2[0] == '/') {
+            // Use absolute path as-is
+            strcpy(path, d2);
+        }
+        else {
+            // Relative path - prepend system path
+            strcpy(path, rb_get_system_path());
+            strcat(path, d2);
+        }
 
 		CheckDev(*qd, d1, path, d3);
 	}
@@ -389,10 +398,10 @@ void QMParams(void) {
     sprintf(path, "%s%s", rb_get_system_path(), QMD.config_file);
     
 	if (!(fp = fopen(path, "r"))) {
-        printf("ERROR: did not locate config file %s\n", QMD.config_file);
+        rb_log_error("ERROR: did not locate config file %s", QMD.config_file);
 	}
 
-	printf("Using Config: %s\n", QMD.config_file);
+	rb_log_info("Using Config: %s", QMD.config_file);
 
 	p = &QMD;
 
@@ -427,6 +436,6 @@ void QMParams(void) {
 		fclose(fp);
 	}
     else {
-		printf("Warning: could not find %s\n", pf);
+		rb_log_error("Warning: could not find %s", pf);
     }
 }

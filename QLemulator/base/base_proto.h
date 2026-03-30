@@ -19,7 +19,7 @@ void QMParams (void);
 extern void SchedInit(void);
 extern int init_xscreen(void);
 extern void init_poll(void);
-int qm_fork(void (*cleanup)(void), unsigned long id);
+int qm_fork(void (*cleanup)(pid_t, unsigned long, int), unsigned long id);
 
 
 extern void GetDateTime(w32 *);

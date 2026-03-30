@@ -31,6 +31,7 @@
 #include "base_uxfile.h"
 #include "QL_screen.h"
 #include "RB_screen.h"
+#include "rb_logger.h"
 
 extern char* rb_get_system_path(void);
 extern char* rb_get_system_rom(void);
@@ -154,8 +155,7 @@ void dosignal()
 	aa_cnt += alrm_count;
 	alrm_count = 0;
 	if (++a_ticks > 49) {
-		printf("received %d alarm signals, processed %d\n", aa_cnt,
-		       a_ticks);
+		rb_log_debug("received %d alarm signals, processed %d", aa_cnt, a_ticks);
 		a_ticks = aa_cnt = 0;
 	}
 #endif
@@ -206,7 +206,7 @@ static int fat_int_called = 0;
 void on_fat_int(int x)
 {
     if (fat_int_called == 1) {
-        printf("ERROR CODE: %d\n", 45);
+        rb_log_error("ERROR CODE: %d", 45);
     }
 	if (fat_int_called > 1)
 		raise(9);
@@ -215,11 +215,11 @@ void on_fat_int(int x)
 
 	alarm(0);
 
-    printf("Terminate on signal %d\n", x);
-	printf("This may be due to an internal error,\n"
+    rb_log_error("Terminate on signal %d", x);
+	rb_log_error("This may be due to an internal error,\n"
 	       "a feature not emulated or an 68000 exception\n"
 	       "that typically occurs only when QDOS is unrecoverably\n"
-	       "out of control\n");
+	       "out of control");
 	dbginfo("FATAL error, PC may not be displayed correctly\n");
 	cleanup(44);
 }
@@ -227,7 +227,7 @@ void on_fat_int(int x)
 #ifdef UX_WAIT
 #include <sys/wait.h>
 struct cleanup_entry {
-	void (*cleanup)();
+	void (*cleanup)(pid_t, unsigned long, int);
 	unsigned long int id;
 	pid_t pid;
 	struct cleanup_entry *next;
@@ -244,7 +244,7 @@ static int qm_wait(fc) int *fc;
 }
 
 /* exactly like fork but registers cleanup handler */
-int qm_fork(void (*cleanup)(), unsigned long id)
+int qm_fork(void (*cleanup)(pid_t, unsigned long, int), unsigned long id)
 {
 	struct cleanup_entry *ce;
 	int pid;
@@ -284,11 +284,11 @@ static void qm_reaper()
 			ce = ce->next;
 		}
 		if (!found)
-			printf("hm, pid %d not found in cleanup list?\n", pid);
+			rb_log_error("hm, pid %d not found in cleanup list?", pid);
 	}
 }
 #else
-int qm_fork(void (*cleanup)(void), unsigned long id) { return 0; }
+int qm_fork(void (*cleanup)(pid_t, unsigned long, int), unsigned long id) { return 0; }
 #endif
 
 void init_signals()
@@ -324,12 +324,12 @@ void DbgInfo(void)
 
 	/* "ssp" is ssp *before* sv-mode was entered (if active now) */
 	/* USP is saved value of a7 or meaningless if not in sv-mode */
-	printf("DebugInfo: PC=%lx, code=%x, SupervisorMode: %s USP=%x SSp=%x A7=%x\n",
+	rb_log_debug("DebugInfo: PC=%lx, code=%x, SupervisorMode: %s USP=%x SSp=%x A7=%x",
 	       (Ptr)pc - (Ptr)theROM, code, (supervisor ? "yes" : "no"), usp,
 	       ssp, *m68k_sp);
-	printf("Register Dump:\t Dn\t\tAn\n");
+	rb_log_debug("Register Dump:\t Dn\t\tAn");
 	for (i = 0; i < 8; i++)
-		printf("%d\t\t%8x\t%8x\n", i, reg[i], aReg[i]);
+		rb_log_debug("%d\t\t%8x\t%8x", i, reg[i], aReg[i]);
 }
 
 long uqlx_tz;
@@ -434,28 +434,23 @@ int load_rom(char *name, w32 addr)
 	fd = impopen(path, O_RDONLY, 0);
     
 	if (fd < 0) {
-		perror("Warning: could not find ROM image ");
-		printf(" - rom name %s\n", name);
+		rb_log_error("Warning: could not find ROM image - rom name %s", name);
 		return 0;
 	}
 
 	fstat(fd, &b);
 	if (b.st_size != 16384 && addr != 0)
-		printf("Warning: ROM size of 16K expected, %s is %d\n", name,
-		       (int)b.st_size);
+		rb_log_info("Warning: ROM size of 16K expected, %s is %d", name, (int)b.st_size);
 	if (addr & 16383)
-		printf("Warning: addr %x for ROM %s not multiple of 16K\n",
-		       addr, name);
+		rb_log_info("Warning: addr %x for ROM %s not multiple of 16K", addr, name);
 
 	r = read(fd, (Ptr)theROM + addr, b.st_size);
 	if (r < 0) {
-		perror("Warning, could not load ROM \n");
-		printf("name %s, addr %x, QDOS origin %p\n", name, addr,
-		       theROM);
+		rb_log_error("Warning, could not load ROM - name %s, addr %x, QDOS origin %p", name, addr, theROM);
 		return 0;
 	}
 	if (V3)
-		printf("loaded %s \t\tat %x\n", name, addr);
+		rb_log_info("loaded %s \t\tat %x", name, addr);
 	close(fd);
 
 	return r;
@@ -471,7 +466,7 @@ extern int shmflag;
 #ifndef XSCREEN
 void parse_screen(char *x)
 {
-	printf("sorry, '-g' option works only with XSCREEN enabled,\ncheck your Makefile\n");
+	rb_log_error("sorry, '-g' option works only with XSCREEN enabled,\ncheck your Makefile");
 }
 #endif
 
@@ -493,7 +488,7 @@ void CoreDump()
 			perror("coredump failed: write: ");
 		close(fd);
 		if (r)
-			printf("memory dump saved as qlcore\n");
+			rb_log_info("memory dump saved as qlcore");
 	}
 }
 
@@ -564,7 +559,7 @@ static int QLInit() {
 
 	theROM = malloc(RTOP);
 	if (theROM == NULL) {
-		printf("sorry, not enough memory for a %dK QL\n", RTOP / 1024);
+		rb_log_error("sorry, not enough memory for a %dK QL", RTOP / 1024);
 		return -1;
 	}
 
@@ -585,7 +580,7 @@ static int QLInit() {
 			rl = load_rom(roms, (w32)0);
 			
             if (!rl) {
-				printf("Could not find qdos ROM image\n");
+				rb_log_error("Could not find qdos ROM image");
                 QLdone = 1;
 				return -2;
 			}
@@ -601,7 +596,7 @@ static int QLInit() {
 
 			rl = load_rom(roms, 0xC000);
 			if (!rl) {
-				printf("Could not find expansion rom, exiting\n");
+				rb_log_error("Could not find expansion rom, exiting");
                 QLdone = 1;
                 return -3;
 			}
@@ -637,7 +632,7 @@ static int QLInit() {
 		if (qlscreen.qm_len > 0x8000) {
 			if (((long)RTOP - qlscreen.qm_len) <
 			    256 * 1024 + 8192) {
-				printf("Sorry, not enough RAM for this screen size\n");
+				rb_log_error("Sorry, not enough RAM for this screen size");
 				goto bsfb;
 			}
 

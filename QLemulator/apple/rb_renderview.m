@@ -347,9 +347,9 @@ extern void QLRBSendEvent(RBEvent evt);
 
 - (void)setFrame:(CGRect)frame {
 	[super setFrame:frame];
-
-    if (frame.size.width > frame.size.height)
-	self.renderImageView.frame = CGRectMake(0, 80, self.bounds.size.width, 256);
+	
+	// Make the image view fill the entire bounds
+	self.renderImageView.frame = self.bounds;
 }
 
 #pragma mark - Initialisation
@@ -366,9 +366,11 @@ extern void QLRBSendEvent(RBEvent evt);
     self.renderImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self addSubview:self.renderImageView];
 #else
-    self.renderImageView = [[OSImageView alloc] initWithFrame:NSZeroRect];
+    self.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    
+    self.renderImageView = [[OSImageView alloc] initWithFrame:self.bounds];
     self.renderImageView.imageScaling = NSImageScaleProportionallyUpOrDown;
-    self.renderImageView.imageAlignment = NSImageAlignTop;
+    self.renderImageView.imageAlignment = NSImageAlignCenter;
     self.renderImageView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     [self addSubview:self.renderImageView];
 #endif

@@ -25,6 +25,7 @@
 #include "base_unix.h"
 #include "base_proto.h"
 #include "QDOS.h"
+#include "rb_logger.h"
 
 #define MDV_ID 0x28b07ae4
 
@@ -181,7 +182,7 @@ static Cond HasName(Str255 name)
 }
 
 static void DrawMdvLeds(void) {
-    printf("LED %d\n", mdvOn);
+    rb_log_debug("LED %d", mdvOn);
 }
 
 void StopMotor(void)
@@ -272,7 +273,7 @@ void InitRAMDev(char *dev)
 						*--ptr = '\0';
 					}
                     
-					printf("Making dir %s\n",qdevs[i].mountPoints[j]);
+					rb_log_info("Making dir %s", qdevs[i].mountPoints[j]);
 
 					mkdir(qdevs[i].mountPoints[j], 0755);
 					*ptr = '/';
@@ -297,7 +298,7 @@ void CleanRAMDev(char *dev)
 						*ptr = '\0';
 					}
                     
-					printf("Removing dir %s\n",qdevs[i].mountPoints[j]);
+					rb_log_info("Removing dir %s", qdevs[i].mountPoints[j]);
 					Cleandir(qdevs[i].mountPoints[j]);
 				}
 			}
@@ -314,7 +315,7 @@ void InitFileDrivers() {
 
 	for (i = MAXDEV - 1; i >= 0; i--) {
 		if (qdevs[i].qname) {
-			printf("Initialising %s\n", qdevs[i].qname);
+			rb_log_info("Initialising %s", qdevs[i].qname);
 
 			for (j = 0; j < 8; j++)
 				if (qdevs[i].Present[j])
@@ -341,7 +342,7 @@ w32 PhysicalDefBlock(void)
 
 static void VolBytes(short vol, long *total, long *empty)
 { /* returns #total and #empty sectors on the selected file device (deleted) */
-	printf("calling VolBytes\n");
+	rb_log_debug("calling VolBytes");
 }
 
 static struct mdvFile *MacFile(Cond check)
@@ -666,7 +667,7 @@ void MdvOpen(void)
 		}
 
 		if (filesys == -1) {
-			printf("wrong filesystem\n");
+			rb_log_error("wrong filesystem");
 			*reg = -7;
 			goto noBlock;
 		}

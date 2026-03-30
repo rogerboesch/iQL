@@ -13,8 +13,9 @@
 
 #include "QL_68000.h"
 #include "base_proto.h"
+#include "rb_logger.h"
 
-#define DUMMY(name,par)  void name(par){printf("warning: calling dummy function: %s \n",__FUNCTION__);}
+#define DUMMY(name,par)  void name(par){rb_log_debug("warning: calling dummy function: %s", __FUNCTION__);}
 
 size_t x_read(int fildes, void *buf, size_t byt)
 {
@@ -32,20 +33,20 @@ void ValidateDispByte(w32 addr){}
 void debug(char *msg)
 { 
 #ifdef DEBUG_QL
-printf("%s\n",msg);
+rb_log_debug("%s", msg);
 #endif
 }
 void debug2(char *msg, long n)
 { 
 #ifdef DEBUG_QL
- printf("%s\t%x\n",msg,n);
+ rb_log_debug("%s\t%x", msg, n);
 #endif
 }
 
 void debugIPC(char *msg, long n)
 { 
 #ifdef DEBUG_IPC
- printf("%s\t%x\n",msg,n);
+ rb_log_debug("%s\t%x", msg, n);
 #endif
 }
 

@@ -17,6 +17,7 @@
 #include "base_proto.h"
 #include "base_xcodes.h"
 #include "QDOS.h"
+#include "rb_logger.h"
 
 static short ramItem = -1;
 extern int do_update;
@@ -79,10 +80,10 @@ static Cond InstallQemlRom(void)
 			if (testMinervaVersion("1.89")) {
 				uintptr_t mpatch_addr = 0x4e6;
 				uint16_t tmp = RW((Ptr)theROM + mpatch_addr);
-				printf("Minerva 1.89, checking for >1MB patch\n");
+				rb_log_info("Minerva 1.89, checking for >1MB patch");
 				if (tmp == 0xd640) {
 					WW((Ptr)theROM + mpatch_addr, 0xd680);
-					printf("....applied patch\n");
+					rb_log_info("....applied patch");
 				}
 			}
 		}
@@ -94,7 +95,7 @@ static Cond InstallQemlRom(void)
 				LookFor(&ROMINIT_CMD_ADDR, 0x0c934afbl, 1000);
 		}
 		if (!qemlPatch)
-			printf("Warning: could not patch ROM scan sequence\n");
+			rb_log_error("Warning: could not patch ROM scan sequence");
 		if (qemlPatch) {
 			WW(((uw16 *)((Ptr)theROM + ROMINIT_CMD_ADDR)),
 			   ROMINIT_CMD_CODE);
@@ -111,7 +112,7 @@ static Cond InstallQemlRom(void)
 #ifdef SERIAL
 #ifndef NEWSERIAL
 			if (isMinerva) {
-				printf("sorry, old style SER driver won't work\n");
+				rb_log_error("sorry, old style SER driver won't work");
 				return qemlPatch;
 			} else {
 				WW(((uw16 *)((Ptr)theROM + 0xbb6l)),
@@ -210,7 +211,7 @@ static void PatchBootDev()
 	while (bootpatchaddr[i]) {
 		if (!strncasecmp((void *)theROM + bootpatchaddr[i], "mdv1",
 				 4)) {
-			printf("Patching Boot Device %s at 0x%x\n", QMD.bootdev,
+			rb_log_info("Patching Boot Device %s at 0x%x", QMD.bootdev,
 			       bootpatchaddr[i]);
 
 			strncpy((void *)theROM + bootpatchaddr[i], QMD.bootdev,
@@ -232,7 +233,7 @@ short LoadMainRom(void) /* load and modify QL ROM */
 
 	isMinerva = testMinerva();
 	if (isMinerva)
-		printf("using Minerva ROM\n");
+		rb_log_info("using Minerva ROM");
 
 	if (p && !QMD.no_patch) {
 		if (!isMinerva) {
@@ -273,7 +274,7 @@ short LoadMainRom(void) /* load and modify QL ROM */
 				a = 0x3120;
 				p = LookFor(&a, 0xd2c02001, 250);
 			} else if (V3)
-				printf("looks like ROM doesn't have 16MB bugs\n");
+				rb_log_info("looks like ROM doesn't have 16MB bugs");
 			if (p) {
 				WW(((uw16 *)((Ptr)theROM + a)), 0xd3c0);
 				a = 0x4330;
@@ -290,7 +291,7 @@ short LoadMainRom(void) /* load and modify QL ROM */
 		PatchBootDev();
 	}
 	if (!p && !QMD.no_patch)
-		printf("warning : could not complete ROM patch\n");
+		rb_log_error("warning : could not complete ROM patch");
 
 	/* last not least intrument the ROM code HW register access */
 
@@ -317,7 +318,7 @@ void InitROM(void)
 	long sysvars, sxvars;
 
 	if ((long)((Ptr)gPC - (Ptr)theROM) - 2 != ROMINIT_CMD_ADDR) {
-		printf("PC %8x is not patched with ROMINIT\n",(unsigned)((long)gPC - (long)theROM));
+		rb_log_error("PC %8x is not patched with ROMINIT", (unsigned)((long)gPC - (long)theROM));
 		exception = 4;
 		extraFlag = true;
 		return;
@@ -351,7 +352,7 @@ void InitROM(void)
 	sxvars = RL((Ptr)theROM + sysvars + 0x7c);
 
     if (V3) {
-		printf("sysvars at %x, ux RAMTOP %d, qlscreen at %d\n", (unsigned)sysvars, RTOP, qlscreen.qm_lo);
+		rb_log_debug("sysvars at %x, ux RAMTOP %d, qlscreen at %d", (unsigned)sysvars, RTOP, qlscreen.qm_lo);
     }
     
 	// QDOS version
@@ -365,7 +366,7 @@ void InitROM(void)
 	QLtrap(1, 0x18, 200000);
 	if (reg[0] == 0) {
         if (V3) {
-			printf("Initialising TK2 device defaults\n");
+			rb_log_debug("Initialising TK2 device defaults");
         }
         
 		WriteLong(0x28070 + 0x3c, aReg[0]);

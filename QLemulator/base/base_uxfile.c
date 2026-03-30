@@ -346,7 +346,7 @@ void deleteheader(char *mount, char *fname, int fstype)
 {
 	int fd, nlen;
 	char buf[64], dpath[4200], name[4200];
-	int (*cmp_fun)(char *, char *, int);
+	int (*cmp_fun)(const char *, const char *, size_t);
 
 	getpath(dpath, fname, 4000);
 	getname(name, fname, 4100);
@@ -391,7 +391,7 @@ int FillXH(int fd, char *name, struct fileHeader *h, int fstype)
 	struct fileHeader buf;
 	int nlen = strlen(name);
 	short found = 0;
-	int (*cmp_fun)(char *, char *, int);
+	int (*cmp_fun)(const char *, const char *, size_t);
 
 	lseek(fd, 0, SEEK_CUR);
 
@@ -436,7 +436,7 @@ void setheader(char *fsmount, char *uxname, struct fileHeader *h, int fstype)
 	int ff, found = 0, free = -1;
 	char dpath[4200], mount[4200];
 	struct fileHeader buf;
-	int (*cmp_fun)(char *, char *, int);
+	int (*cmp_fun)(const char *, const char *, size_t);
 
 	strncpy(mount, fsmount, 4200);
 

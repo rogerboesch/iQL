@@ -121,6 +121,10 @@
 		DB8BD50E25C5689100406ACD /* rb_platform.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8BD50C25C5689100406ACD /* rb_platform.m */; };
 		DB8BD51425C6CAEF00406ACD /* ql.ini in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD51325C6CAEF00406ACD /* ql.ini */; };
 		DB8BD51525C6CAEF00406ACD /* ql.ini in Resources */ = {isa = PBXBuildFile; fileRef = DB8BD51325C6CAEF00406ACD /* ql.ini */; };
+		DBD2F0A32F7A95A100C51117 /* rb_logger.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD2F0A22F7A95A100C51117 /* rb_logger.m */; };
+		DBD2F0A42F7A95A100C51117 /* rb_logger.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD2F0A22F7A95A100C51117 /* rb_logger.m */; };
+		DBD2F0A62F7A964C00C51117 /* LOGGER_README.md in Resources */ = {isa = PBXBuildFile; fileRef = DBD2F0A52F7A964C00C51117 /* LOGGER_README.md */; };
+		DBD2F0A72F7A964C00C51117 /* LOGGER_README.md in Resources */ = {isa = PBXBuildFile; fileRef = DBD2F0A52F7A964C00C51117 /* LOGGER_README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -245,6 +249,9 @@
 		DB8BD50B25C5689100406ACD /* rb_platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rb_platform.h; sourceTree = "<group>"; };
 		DB8BD50C25C5689100406ACD /* rb_platform.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rb_platform.m; sourceTree = "<group>"; };
 		DB8BD51325C6CAEF00406ACD /* ql.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = ql.ini; sourceTree = "<group>"; };
+		DBD2F0A12F7A959200C51117 /* rb_logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rb_logger.h; sourceTree = "<group>"; };
+		DBD2F0A22F7A95A100C51117 /* rb_logger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rb_logger.m; sourceTree = "<group>"; };
+		DBD2F0A52F7A964C00C51117 /* LOGGER_README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LOGGER_README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,6 +392,9 @@
 				DB8BD50C25C5689100406ACD /* rb_platform.m */,
 				DB8BD43725C5618C00406ACD /* rb_renderview.h */,
 				DB8BD43425C5618C00406ACD /* rb_renderview.m */,
+				DBD2F0A12F7A959200C51117 /* rb_logger.h */,
+				DBD2F0A22F7A95A100C51117 /* rb_logger.m */,
+				DBD2F0A52F7A964C00C51117 /* LOGGER_README.md */,
 			);
 			path = apple;
 			sourceTree = "<group>";
@@ -585,6 +595,7 @@
 				DB8BD2FF25C55F8800406ACD /* ql_jm.rom in Resources */,
 				DB8BD2FD25C55F8800406ACD /* min198.rom in Resources */,
 				DB8BD2FE25C55F8800406ACD /* ql_js.rom in Resources */,
+				DBD2F0A72F7A964C00C51117 /* LOGGER_README.md in Resources */,
 				DB8BCF6925C3D2A900406ACD /* Assets.xcassets in Resources */,
 				DB8BD30425C55F9000406ACD /* snake_bas in Resources */,
 				DB8BD30325C55F9000406ACD /* invaders_bas in Resources */,
@@ -601,6 +612,7 @@
 				DB8BD51525C6CAEF00406ACD /* ql.ini in Resources */,
 				DB8BD2F425C55F7600406ACD /* min198.rom in Resources */,
 				DB8BD2F125C55F7600406ACD /* BOOT in Resources */,
+				DBD2F0A62F7A964C00C51117 /* LOGGER_README.md in Resources */,
 				DB8BD2F725C55F7600406ACD /* invaders_bas in Resources */,
 				DB8BD29125C402A500406ACD /* LaunchScreen.storyboard in Resources */,
 				DB8BD28E25C402A500406ACD /* Assets.xcassets in Resources */,
@@ -635,6 +647,7 @@
 				DB8BD4C125C5618C00406ACD /* base_pty.c in Sources */,
 				DB8BD4AF25C5618C00406ACD /* QL_ip.c in Sources */,
 				DB8BD4BB25C5618C00406ACD /* base_xc68.c in Sources */,
+				DBD2F0A42F7A95A100C51117 /* rb_logger.m in Sources */,
 				DB8BD4CF25C5618C00406ACD /* base_util.c in Sources */,
 				DB8BD49525C5618C00406ACD /* QL_config.c in Sources */,
 				DB8BD49D25C5618C00406ACD /* QL_disk.c in Sources */,
@@ -690,6 +703,7 @@
 				DB8BD4E925C561C600406ACD /* rb_renderview.m in Sources */,
 				346F738525C9348600A1FF55 /* rb_virtual_keys.c in Sources */,
 				DB8BD4B225C5618C00406ACD /* QL_screen.c in Sources */,
+				DBD2F0A32F7A95A100C51117 /* rb_logger.m in Sources */,
 				DB8BD28925C402A400406ACD /* ViewController.m in Sources */,
 				DB8BD28325C402A400406ACD /* AppDelegate.m in Sources */,
 				DB8BD4D025C5618C00406ACD /* base_util.c in Sources */,

@@ -28,6 +28,7 @@
 #include "base_emudisk.h"
 #include "base_cfg.h"
 #include "QDOS.h"
+#include "rb_logger.h"
 
 #define MIN(x,y) ((x)<(y)?(x) : (y))
 #define min(_a_,_b_)(_a_<_b_ ? _a_ : _b_)
@@ -446,7 +447,7 @@ OSErr QFOpenDisk(struct mdvFile *f)
       res=LoadSector0();
       if (res<0)
 	{
-	  printf("unrecognised format, not a QDOS medium?\n");
+	  rb_log_error("unrecognised format, not a QDOS medium?");
 	  /*
 	     carefull here: buffer has not been allocated
 	     or is already freed
@@ -1998,7 +1999,7 @@ void QDiskClose(struct mdvFile *f)
 	      SET_FDUPDT(h,GET_REF(f));
 	      RewriteHeader();
 	    }
-	  else printf("Header not found?!?\n");
+	  else rb_log_error("Header not found?!?");
 	}
     }
   if(curr_flpfcb->buffer!=nil /*&& GET_FNUMBER(f).dfn!=0*/)
@@ -2007,7 +2008,7 @@ void QDiskClose(struct mdvFile *f)
     }
   (curr_flpfcb->file_count)--;
   if (curr_flpfcb->file_count<0)
-    printf("file count<0 ?!?!?!?\n");
+    rb_log_error("file count<0 ?!?!?!?");
   curr_flpfcb->lastclose=time(NULL);
 }
 

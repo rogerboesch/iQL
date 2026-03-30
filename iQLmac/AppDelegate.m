@@ -137,6 +137,10 @@ static AppDelegate* s_appDelegate;
 }
 
 - (void)copyFile:(NSString*)filename toFolder:(NSString*)folderName {
+    [self copyFile:filename toFolder:folderName overwrite:YES];
+}
+
+- (void)copyFile:(NSString*)filename toFolder:(NSString*)folderName overwrite:(BOOL)overwrite {
     NSString* resourcePath = [[NSBundle mainBundle] resourcePath];
     NSString* fromPath = [NSString stringWithFormat:@"%@/%@", resourcePath, filename];
 
@@ -147,7 +151,7 @@ static AppDelegate* s_appDelegate;
         toPath = [NSString stringWithFormat:@"%@/%@", documentPath, filename];
     }
     
-    [RBPlatform copyFile:fromPath to:toPath overwrite:YES];
+    [RBPlatform copyFile:fromPath to:toPath overwrite:overwrite];
 }
 
 - (void)createQLSystem {
@@ -159,7 +163,9 @@ static AppDelegate* s_appDelegate;
     [RBPlatform createFolder:@"iQLmac/flp1"];
     [RBPlatform createFolder:@"iQLmac/temp"];
     
-    [self copyFile:@"ql.ini" toFolder:@""];
+    // Don't overwrite ql.ini if it already exists (preserve user changes)
+    [self copyFile:@"ql.ini" toFolder:@"" overwrite:NO];
+    
     [self copyFile:@"min198.rom" toFolder:@"roms"];
     [self copyFile:@"ql_jm.rom" toFolder:@"roms"];
     [self copyFile:@"ql_js.rom" toFolder:@"roms"];
