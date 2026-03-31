@@ -77,10 +77,9 @@ int do_update = 0; /* initial delay for screen drawing */
 int rx1, rx2, ry1, ry2, finishflag, doscreenflush;
 int QLdone = 0;
 int QLrestart = 0;
+int QLpaused = 0;
 
 extern void FlushDisplay(void);
-
-extern void DbgInfo(void);
 
 void btrap3(void);
 
@@ -220,7 +219,7 @@ void on_fat_int(int x)
 	       "a feature not emulated or an 68000 exception\n"
 	       "that typically occurs only when QDOS is unrecoverably\n"
 	       "out of control");
-	dbginfo("FATAL error, PC may not be displayed correctly\n");
+    rb_log_error("FATAL error, PC may not be displayed correctly\n");
 	cleanup(44);
 }
 
@@ -318,7 +317,7 @@ void ChangedMemory(int from, int to)
 char **argv;
 int argc;
 
-void DbgInfo(void)
+void rb_log_register_dump(void)
 {
 	int i;
 
@@ -552,7 +551,7 @@ static int QLInit() {
 	finishflag = 0;
 
     char temp[256];
-    sprintf(temp, "iQL V%s - QL Emulator (%s)", IQL_VERSION, IQL_RELEASE);
+    sprintf(temp, "iQL V%s", IQL_VERSION);
     ql_set_title(temp);
 
     tzset();
@@ -725,8 +724,11 @@ static void QLCleanUp() {
 
 static void QLLoop() {
     QLrestart = 0;
-    
+
     while (!QLdone) {
+        while (QLpaused && !QLdone) {
+            usleep(10000);
+        }
         QLStep();
         
         if (QLrestart) {
@@ -767,6 +769,14 @@ void QLRestart() {
 
 void QLStop() {
     QLdone = 1;
+}
+
+void QLPause() {
+    QLpaused = 1;
+}
+
+void QLResume() {
+    QLpaused = 0;
 }
 
 void QLSetSpeed(int ms) {
