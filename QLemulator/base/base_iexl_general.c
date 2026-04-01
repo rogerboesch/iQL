@@ -13,12 +13,13 @@
 
 #include "QL_68000.h"
 #include "RB_screen.h"
+#include "rb_logger.h"
 
 int wait_time_ms = 0;
 
 void debug(char*);
 void debug2(char*,long);
-extern void DbgInfo(void);
+extern void rb_log_register_dump(void);
 void dosignal(void);
 
 void    (**qlux_table)(void);
@@ -343,16 +344,16 @@ void REGP1 ExceptionIn(char x)
 {
   if (!tracetrap) return;
 
-  printf("Entering TRAP #%d\n",x-32);
-  DbgInfo();
+  rb_log_debug("Entering TRAP #%d", x-32);
+  rb_log_register_dump();
 }
 
 void ExceptionOut()
 {
   if (!tracetrap) return;
 
-  printf("RTE\n");
-  DbgInfo();
+  rb_log_debug("RTE");
+  rb_log_register_dump();
 }
 
 void ExceptionProcessing()

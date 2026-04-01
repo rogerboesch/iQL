@@ -137,7 +137,7 @@ void rb_log_error_impl(const char *file, int line, const char *format, ...) {
     char timestamp[32];
     rb_log_timestamp(timestamp, sizeof(timestamp));
     
-    fprintf(stderr, "[%s] ❌ (%s:%d) ", timestamp, extract_filename(file), line);
+    fprintf(stderr, "❌ [%s, %s:%d] ", timestamp, extract_filename(file), line);
     vfprintf(stderr, format, args);
     
     size_t len = strlen(format);
@@ -148,3 +148,32 @@ void rb_log_error_impl(const char *file, int line, const char *format, ...) {
     va_end(args);
     fflush(stderr);
 }
+void rb_log_dbginfo(const char *file, int line, const char *format, ...) {
+    if (RB_LOG_LEVEL_DEBUG < s_current_log_level) {
+        return;
+    }
+    
+    va_list args;
+    va_start(args, format);
+    
+    char timestamp[32];
+    rb_log_timestamp(timestamp, sizeof(timestamp));
+    
+    // Log the message
+    printf("🔧 [%s, %s:%d] ", timestamp, extract_filename(file), line);
+    vprintf(format, args);
+    
+    size_t len = strlen(format);
+    if (len == 0 || format[len - 1] != '\n') {
+        printf("\n");
+    }
+    
+    va_end(args);
+    
+    // Also call the register dump
+    extern void rb_log_register_dump(void);
+    rb_log_register_dump();
+    
+    fflush(stdout);
+}
+

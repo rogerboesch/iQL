@@ -23,6 +23,7 @@
 #include "base_driver.h"
 #include "base_proto.h"
 #include "base_xcodes.h"
+#include "rb_logger.h"
 #include "QDOS.h"
 
 extern int gKeyDown;
@@ -58,7 +59,7 @@ void build_entry(w16 **tptr, struct BAS_PFENTRY *p, w16 **iptr) {
 
   t=*tptr;
   if ((uintptr_t)t&1) {
-      printf("basic extension problem\n");
+      rb_log_error("basic extension problem");
       cleanup(3);
     }
 
@@ -89,7 +90,7 @@ void fnext(int type,struct BAS_PFENTRY **list) {
     }
     
     if (!p) {
-        printf("basic extension problem\n");
+        rb_log_error("basic extension problem");
         cleanup(3);
     }
 
@@ -136,7 +137,7 @@ void create_link_table(struct BAS_PFENTRY *list)
 	  pccnt+=strlen(p->name);
 	  break;
 	default:
-	  fprintf(stderr,"wrong basic extension type %d\n",p->type);
+	  rb_log_error("wrong basic extension type %d", p->type);
 	  return;
 	}
       p=p->link;
@@ -148,7 +149,7 @@ void create_link_table(struct BAS_PFENTRY *list)
   QLtrap(1,0x18,2000000);
   if (reg[0])
     {
-      fprintf(stderr,"allocation failed, QDOS error %d\n",reg[0]);
+      rb_log_error("allocation failed, QDOS error %d", reg[0]);
       return;
     }
   bext_table=aReg[0];
@@ -251,7 +252,7 @@ void BASEXTCmd()
   if (!p)
     {
       rts();
-      printf("problem with basic extension\n");
+      rb_log_error("problem with basic extension");
       return;
     }
 
@@ -291,7 +292,7 @@ void bas_deallocstack(uw32 size)
 
   if (size&1)
     {
-      printf("deallocing %d bytes of SB stack ?!?!!\n",size);
+      rb_log_error("deallocing %d bytes of SB stack ?!?!!", size);
       size&=(uw32)-1;
     }
 
@@ -473,7 +474,7 @@ bas_err Kill_UQLX()
   if (bas_getln(&rx)<0)
     rx=0;
 
-  printf("\nexiting UQLX: Kill_UQLX %d\n\n",rx);
+  rb_log_info("exiting UQLX: Kill_UQLX %d", rx);
   cleanup(rx);
   return 0;
 }

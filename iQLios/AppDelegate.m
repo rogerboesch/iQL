@@ -40,7 +40,7 @@
     [self copyFile:@"ql_jm.rom" toFolder:@"roms"];
     [self copyFile:@"ql_js.rom" toFolder:@"roms"];
     [self copyFile:@"tk232.rom" toFolder:@"roms"];
-    [self copyFile:@"BOOT" toFolder:@"mdv1"];
+    //[self copyFile:@"BOOT" toFolder:@"mdv1"];
     [self copyFile:@"invaders_bas" toFolder:@"mdv2"];
     [self copyFile:@"snake_bas" toFolder:@"mdv2"];
 }

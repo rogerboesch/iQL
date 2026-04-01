@@ -307,8 +307,9 @@ static inline void _wl_(uw32 *d, uw32 v)
 #define WL(_r_al, _r_vl) _wl_((void *)(_r_al), (_r_vl))
 #endif
 
-#define dbginfo(format,args...) {printf(format, ## args);\
-                                 DbgInfo();}
+// Debug info logging - use rb_log_dbginfo() instead
+extern void rb_log_dbginfo(const char *file, int line, const char *format, ...);
+#define dbginfo(...) rb_log_dbginfo(__FILE__, __LINE__, __VA_ARGS__)
 
 
 #ifdef QM_BIG_ENDIAN

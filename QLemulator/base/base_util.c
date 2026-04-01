@@ -8,6 +8,7 @@
 /* some miscelaneous utility fucntions */
 
 #include "QL_68000.h"
+#include "rb_logger.h"
 
 #include <stdio.h>
 #include <sys/types.h>
@@ -48,7 +49,7 @@ int check_pend(int fd,int mode)
       break;
     case SLC_ERR: xx=&errfd;
       break;
-    default : printf("wrong mode for check_pend: %d\n",mode);
+    default : rb_log_error("wrong mode for check_pend: %d", mode);
       return 0;     
     }
   

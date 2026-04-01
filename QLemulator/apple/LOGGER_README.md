@@ -70,30 +70,28 @@ rb_log_set_level(RB_LOG_LEVEL_DEBUG); // Show all messages
 
 ## Output Format
 
-The logger includes time, icon, file location, and message:
+The logger uses a clean format with icon first, followed by timestamp and location:
 
 ```
-[13:49:32.249] ℹ️ (base_cfg.c:395) Using Config: ql.ini
-[13:49:32.350] ℹ️ (QL_config.c:235) using Minerva ROM
-[13:49:32.451] ℹ️ (QL_config.c:213) Patching Boot Device mdv1 at 0x83ca
-[13:49:32.562] 🔧 (base_dummies.c:17) warning: calling dummy function: InstallSerial
-[13:49:32.673] ❌ (base_cfg.c:393) Failed to open file: config.dat
+ℹ️ [14:07:29.215, base_cfg.c:404] Using Config: /Users/roger/Documents/iQLmac/ql.ini
+ℹ️ [14:07:29.316, QL_config.c:235] using Minerva ROM
+ℹ️ [14:07:29.417, QL_config.c:213] Patching Boot Device mdv1 at 0x83ca
+🔧 [14:07:29.528, base_dummies.c:17] warning: calling dummy function: InstallSerial
+❌ [14:07:29.639, base_cfg.c:393] Failed to open file: config.dat
 ```
 
-### Format: `[HH:MM:SS.mmm] icon (filename:line) message`
+### Format: `icon [HH:MM:SS.mmm, filename:line] message`
 
-- **Time** - Hours:minutes:seconds.milliseconds
-- **Icon** - Emoji showing severity level
-- **Location** - Filename and line number in parentheses
-- **Message** - The actual log message
+- **Icon first** - Easy to scan by severity at a glance
+- **Single bracket** - Timestamp and location combined for cleaner look
+- **Comma separated** - Clear separation between time and location
+- **Minimal clutter** - Only essential information
 
 ### Severity Icons
 
 - **🔧** - Debug/diagnostic information for developers
 - **ℹ️** - General informational messages
 - **❌** - Error messages that require attention
-
-The file location makes it easy to find exactly where each log message originated!
 
 ## Benefits
 

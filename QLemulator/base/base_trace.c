@@ -8,6 +8,7 @@
 #include <stdio.h>
 
 #include "QL_68000.h"
+#include "rb_logger.h"
 
 #ifdef TRACE
 
@@ -112,8 +113,8 @@ void DoTrace()
       return;
     }
   
-  printf("Trace : %s+%x\n",curr->comment,(Ptr)pc-(Ptr)(curr->low)-(long)theROM);
-  DbgInfo();
+  rb_log_debug("Trace : %s+%x", curr->comment, (Ptr)pc-(Ptr)(curr->low)-(long)theROM);
+  rb_log_register_dump();
 }
  
 
@@ -142,10 +143,10 @@ void BTShowException(int xc)
       if(ixc==9) p3="trace xc";
       if(ixc==10) p3="Axxx instruction code";
       if(ixc==11) p3="Fxxx instruction code";
-      if(xc>=32 && xc<=32+15) {printf("\tTRAP #%d\t",xc-32);return;}
-      if(xc>=24 && xc<=24+7){printf("\tInterrupt #%d\t",xc-24);return;}
+      if(xc>=32 && xc<=32+15) {rb_log_debug("\tTRAP #%d\t", xc-32); return;}
+      if(xc>=24 && xc<=24+7){rb_log_debug("\tInterrupt #%d\t", xc-24); return;}
          }
-  printf("\tException %s \t",p3);
+  rb_log_debug("\tException %s \t", p3);
 }
 
 void BackTrace(int depth)
@@ -155,9 +156,9 @@ void BackTrace(int depth)
   int what,x=0;
   
   
-  printf("BackTrace:\n");
+  rb_log_debug("BackTrace:");
   if (btnochng) {
-    printf("\tunchanged\n");
+    rb_log_debug("\tunchanged");
     return;
   }
   btnochng=1;
@@ -184,11 +185,11 @@ void BackTrace(int depth)
 	  break;
 	default : evname="unknown";
 	}
-	printf("\t %s\t",evname);
+	rb_log_debug("\t %s\t", evname);
       }
       else BTShowException(-what);
       
-      printf("at PC=%x, new pc=%x\n",(Ptr)(p->where)-(Ptr)theROM,p->to);
+      rb_log_debug("at PC=%x, new pc=%x", (Ptr)(p->where)-(Ptr)theROM, p->to);
     }
 }
 

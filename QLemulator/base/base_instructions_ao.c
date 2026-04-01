@@ -10,6 +10,7 @@
 #define INLINE
 #define vml
 #include "QL_68000.h"
+#include "rb_logger.h"
 extern rw8 GetFromEA_b_m4(void);
 extern rw16 GetFromEA_w_m4(void);
 extern rw32 GetFromEA_l_m4(void);
@@ -19,6 +20,7 @@ extern rw16 GetFromEA_w_m3(void);
 extern rw32 GetFromEA_l_m3(void);
 extern rw16 GetFromEA_rw_m3(ashort r);
 extern rw32 GetFromEA_rl_m3(ashort r);
+extern void rb_log_register_dump(void);
 
 #endif
 
@@ -2094,8 +2096,8 @@ IDECL(movep_w_mr)   /* word from memory */
   register w8* dn;
 
 #if 0
-  printf("movep\n"); 
-  DbgInfo(); 
+  rb_log_debug("movep"); 
+  rb_log_register_dump(); 
   /*BackTrace(10);*/
 #endif
   
@@ -2152,8 +2154,8 @@ IDECL(movep_w_rm)   /* word to memory */
   register w32 ea;
   register w8* dn;
 
-  /*    printf("movep\n"); 
-   DbgInfo(); */
+  /*    rb_log_debug("movep"); 
+   rb_log_register_dump(); */
    /*BackTrace(10);*/
    
 

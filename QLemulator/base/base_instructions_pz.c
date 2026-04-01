@@ -7,16 +7,16 @@
 
 #include <stdio.h>
 
-extern void DbgInfo(void);
-
 #ifndef IE_XL
 // no inlining, global scope for the slow version
 #define INLINE
 #define vml
 #include "QL_68000.h"
+#include "rb_logger.h"
 extern rw8 GetFromEA_b_m4(void);
 extern rw16 GetFromEA_w_m4(void);
 extern rw32 GetFromEA_l_m4(void);
+extern void rb_log_register_dump(void);
 
 #ifdef DEBUG_QL
 extern int trace_rts;
@@ -137,7 +137,7 @@ IDECL(rte)
       
 #ifdef DEBUG_QL
       if(trace_rts-->0)
-	  dbginfo("returned by RTE\n");
+	  dbginfo("returned by RTE");
 #endif
     }
   else
@@ -168,7 +168,7 @@ IDECL(rtr)
 
 #ifdef DEBUG_QL
       if(trace_rts-->0)
-	  dbginfo("returned by RTR\n");
+	  dbginfo("returned by RTR");
 #endif
 
 NEXT;
@@ -195,7 +195,7 @@ IDECL(rts)
 
 #ifdef DEBUG_QL
       if(trace_rts-->0)
-	  dbginfo("returned from RTS\n");
+	  dbginfo("returned from RTS");
 #endif
 
 #ifdef TRACE
